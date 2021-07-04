@@ -62,12 +62,16 @@ public class GamePlayActivity extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
         backgroundMusic.pause();
+        cTimer.cancel();
+        finish();
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
         backgroundMusic.stop();
+        cTimer.cancel();
+        finish();
     }
 
 
@@ -79,10 +83,11 @@ public class GamePlayActivity extends AppCompatActivity {
         setContentView(R.layout.activity_game_play);
         backgroundMusic = new MediaPlayer();
         backgroundMusic = MediaPlayer.create(GamePlayActivity.this,R.raw.background);
-        Name = findViewById(R.id.name_score);
-        Name.setText(sp.getString("user_name","")+", Score:"+sp.getInt("score",0));
-        musicOnOrOff = sp.getBoolean("status",true);
         score=sp.getInt("score",0);
+        Name = findViewById(R.id.name_score);
+        Name.setText(sp.getString("user_name","")+", Score:"+ score);
+        musicOnOrOff = sp.getBoolean("status",true);
+
         Field [] fields= R.array.class.getFields();
         ids= new ArrayList<Integer>(fields.length);
 
@@ -134,6 +139,7 @@ public class GamePlayActivity extends AppCompatActivity {
     private void answerCheck(AnswerButton clicked){
         clicked.ButtonSelected();
         if(clicked == Answer){
+            score += 100;
             clicked.CorrectAnswer(true);
             Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
@@ -154,7 +160,7 @@ public class GamePlayActivity extends AppCompatActivity {
                 public void run() {
                   clicked.ButtonReset();
                   Answer.ButtonReset();
-                    gameOver();
+                  gameOver();
                 }
             }, 2000);
 
@@ -171,7 +177,6 @@ public class GamePlayActivity extends AppCompatActivity {
     private int randomizeQuestion(){
         Random r = new Random();
         int result = r.nextInt(ids.size() + 0);
-
         return result;
     }
     private void gameOver(){
