@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GamePlayActivity"
+    android:orientation="vertical"
+    android:background="@color/purple_500">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_margin="7dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/name_score"
+            android:textSize="25sp"
+            android:layout_gravity="center|start"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/timer_Tv"
+            android:text="00:30"
+            android:textSize="25sp"
+            android:layout_gravity="center|end"/>
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/question_tv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2.5"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        android:layout_margin="30dp"
+        android:shadowRadius="20"
+        android:textSize="20dp"
+        android:textStyle="italic"
+        android:background="@color/purple_200" />
+
+    <LinearLayout
+        android:id="@+id/answer1_btns_LY"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3.5"
+        android:orientation="vertical"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp">
+
+        <com.hit.whowantstobeaprogrammer.AnswerButton
+            android:id="@+id/answer1_btn"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            android:textColor="#FFFFFF"
+            android:textSize="18dp" />
+
+        <com.hit.whowantstobeaprogrammer.AnswerButton
+            android:id="@+id/answer2_btn"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            android:textColor="#FFFFFF"
+            android:textSize="18dp" />
+
+        <com.hit.whowantstobeaprogrammer.AnswerButton
+            android:id="@+id/answer3_btn"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            android:textColor="#FFFFFF"
+            android:textSize="18dp"/>
+
+        <com.hit.whowantstobeaprogrammer.AnswerButton
+            android:id="@+id/answer4_btn"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            android:textColor="#FFFFFF"
+            android:textSize="18dp" />
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/music_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginBottom="30dp"
+        android:clickable="true"
+        android:layout_gravity="center|end"
+        android:layout_marginEnd="20dp"
+        app:backgroundTint="#AC7BB5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.104"
+        app:layout_constraintStart_toStartOf="parent"
+        android:src="@android:drawable/ic_lock_silent_mode_off" />
+
+</LinearLayout>

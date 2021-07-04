@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">מי רוצה להיות מתכנת</string>
+    <string name="instructions_text">הוראות</string>
+    <string name="info_text">תוכנה זו פותחה ע\"י עידו עמירה, איציק עזרא וסער סקיטל כפרוייקט גמר בקורס אנדרואיד.</string>
+</resources>
