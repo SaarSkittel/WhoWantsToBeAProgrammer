@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -37,20 +38,20 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        backgroundMusic.start();
+        backgroundMusic.stop();
         musicOnOrOff = sp.getBoolean("status", true);
+        musicControl();
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         backgroundMusic = new MediaPlayer();
-        backgroundMusic = MediaPlayer.create(MainActivity.this, R.raw.background);
-        backgroundMusic.start();
-        musicOnOrOff = true;
         setContentView(R.layout.activity_main);
         playButton = findViewById(R.id.play_btn);
         sp = getSharedPreferences("user_details", MODE_PRIVATE);
+        musicOnOrOff = sp.getBoolean("status", true);
+
 
         playButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,7 +90,6 @@ public class MainActivity extends AppCompatActivity {
 
                     }
                 }).show();
-
             }
         });
 
@@ -110,9 +110,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         music = findViewById(R.id.music_btn);
+        musicControl();
         music.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                musicOnOrOff=!musicOnOrOff;
                 musicControl();
             }
         });
@@ -120,14 +122,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void musicControl() {
-        if (musicOnOrOff) {
+        if (!musicOnOrOff) {
             backgroundMusic.stop();
-            musicOnOrOff = false;
             music.setImageResource(android.R.drawable.ic_lock_silent_mode);
         } else {
             backgroundMusic = MediaPlayer.create(MainActivity.this, R.raw.background);
             backgroundMusic.start();
-            musicOnOrOff = true;
             music.setImageResource(android.R.drawable.ic_lock_silent_mode_off);
         }
     }
