@@ -37,6 +37,7 @@ public class GamePlayActivity extends AppCompatActivity {
     ArrayList<Integer>ids;
     CountDownTimer cTimer = null;
     TextView Name;
+    private int score;
 
     void startTimer() {
         cTimer = new CountDownTimer(10000, 1000) {
@@ -81,7 +82,7 @@ public class GamePlayActivity extends AppCompatActivity {
         Name = findViewById(R.id.name_score);
         Name.setText(sp.getString("user_name","")+", Score:"+sp.getInt("score",0));
         musicOnOrOff = sp.getBoolean("status",true);
-
+        score=sp.getInt("score",0);
         Field [] fields= R.array.class.getFields();
         ids= new ArrayList<Integer>(fields.length);
 
@@ -174,9 +175,11 @@ public class GamePlayActivity extends AppCompatActivity {
         return result;
     }
     private void gameOver(){
-
+        SharedPreferences.Editor editor = sp.edit();
+        editor.putInt("score",score);
         Intent intent = new Intent(GamePlayActivity.this,GameOverActivity.class);
         startActivity(intent);
+        finish();
 
     }
     private void load(){
