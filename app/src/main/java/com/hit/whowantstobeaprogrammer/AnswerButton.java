@@ -29,11 +29,11 @@ public class AnswerButton extends androidx.appcompat.widget.AppCompatButton {
 
     }
     public void ButtonSelected(){
-        ChangeColor(R.drawable.bluebuttonshape);
+        ChangeColor(R.drawable.buttonshape);
         this.setClickable(false);
     }
     public void ButtonReset(){
-        ChangeColor(R.drawable.buttonshape);
+        ChangeColor(R.drawable.bluebuttonshape);
         this.setClickable(true);
     }
     public void WrongAnswer() {

@@ -11,7 +11,9 @@ import android.os.CountDownTimer;
 import android.os.Handler;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
+
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -19,11 +21,11 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-import java.util.Map;
+
 import java.util.Random;
 
 public class GamePlayActivity extends AppCompatActivity {
-
+    FloatingActionButton music;
     Boolean musicOnOrOff;
     SharedPreferences sp;
     MediaPlayer backgroundMusic;
@@ -55,7 +57,9 @@ public class GamePlayActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        backgroundMusic.start();
+        backgroundMusic.stop();
+        musicOnOrOff = sp.getBoolean("status", true);
+        musicControl();
     }
 
     @Override
@@ -78,15 +82,14 @@ public class GamePlayActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_game_play);
         sp = getSharedPreferences("user_details",MODE_PRIVATE);
         musicOnOrOff = sp.getBoolean("status",true);
-        setContentView(R.layout.activity_game_play);
         backgroundMusic = new MediaPlayer();
         backgroundMusic = MediaPlayer.create(GamePlayActivity.this,R.raw.background);
         score=sp.getInt("score",0);
         Name = findViewById(R.id.name_score);
         Name.setText(sp.getString("user_name","")+", Score:"+ score);
-        musicOnOrOff = sp.getBoolean("status",true);
 
         Field [] fields= R.array.class.getFields();
         ids= new ArrayList<Integer>(fields.length);
@@ -97,12 +100,22 @@ public class GamePlayActivity extends AppCompatActivity {
 
         if(musicOnOrOff){
             backgroundMusic.start();
+            musicControl();
         }
         QuestionTV=findViewById(R.id.question_tv);
         Answer1=findViewById(R.id.answer1_btn);
         Answer2=findViewById(R.id.answer2_btn);
         Answer3=findViewById(R.id.answer3_btn);
         Answer4=findViewById(R.id.answer4_btn);
+        music =findViewById(R.id.test);
+        music.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                musicOnOrOff=!musicOnOrOff;
+                musicControl();
+            }
+        });
+        musicControl();
         StartGame();
     }
 
@@ -224,5 +237,16 @@ public class GamePlayActivity extends AppCompatActivity {
             Answer=Answer4;
         }
     }
+    private void musicControl() {
+        if (!musicOnOrOff) {
+            backgroundMusic.stop();
+            music.setImageResource(android.R.drawable.ic_lock_silent_mode);
+        } else {
+            backgroundMusic = MediaPlayer.create(GamePlayActivity.this, R.raw.background);
+            backgroundMusic.start();
+            music.setImageResource(android.R.drawable.ic_lock_silent_mode_off);
+        }
+    }
+
 
 }

@@ -5,36 +5,36 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#9C27B0"
+    android:background="@drawable/background"
     tools:context=".MainActivity">
 
     <ImageView
+
         android:id="@+id/logo_IV"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="3.5"
+        android:layout_height="1dp"
+        android:layout_weight="1.5"
         android:layout_marginLeft="35dp"
         android:layout_marginRight="35dp"
         android:scaleType="centerCrop"
+
         android:src="@drawable/logo"/>
 
 
     <LinearLayout
         android:id="@+id/btns_LY"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="2.5"
-        android:orientation="vertical"
+        android:layout_height="232dp"
         android:layout_marginLeft="70dp"
-        android:layout_marginRight="70dp">
+        android:layout_marginRight="70dp"
+        android:orientation="vertical">
 
         <Button
             android:id="@+id/play_btn"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_height="67dp"
             android:layout_margin="5dp"
-            android:background="@drawable/buttonshape"
+            android:background="@drawable/bluebuttonshape"
             android:shadowColor="#A8A8A8"
             android:shadowDx="0"
             android:shadowDy="0"
@@ -46,10 +46,10 @@
         <Button
             android:id="@+id/instructions_btn"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_height="67dp"
             android:layout_margin="5dp"
-            android:background="@drawable/buttonshape"
+
+            android:background="@drawable/bluebuttonshape"
             android:shadowColor="#A8A8A8"
             android:shadowDx="0"
             android:shadowDy="0"
@@ -61,10 +61,10 @@
         <Button
             android:id="@+id/scores_btn"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_height="67dp"
+
             android:layout_margin="5dp"
-            android:background="@drawable/buttonshape"
+            android:background="@drawable/bluebuttonshape"
             android:shadowColor="#A8A8A8"
             android:shadowDx="0"
             android:shadowDy="0"
@@ -79,17 +79,16 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_weight="0.2">
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/music_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
             android:clickable="true"
             android:layout_gravity="center|end"
             android:layout_marginEnd="20dp"
-            app:backgroundTint="#AC7BB5"
+            app:backgroundTint="@android:color/transparent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.104"
@@ -100,15 +99,14 @@
             android:id="@+id/info_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
             android:clickable="true"
             android:layout_gravity="center|start"
             android:layout_marginStart="20dp"
             android:src="@android:drawable/ic_dialog_info"
-            app:backgroundTint="#AC7BB5"
+            app:backgroundTint="@android:color/transparent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.941"
+            app:layout_constraintHorizontal_bias="0.104"
             app:layout_constraintStart_toEndOf="@+id/music_btn" />
 
     </FrameLayout>
