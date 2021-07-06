@@ -166,11 +166,11 @@ public class GamePlayActivity extends AppCompatActivity {
     }
 
     private void answerCheck(AnswerButton clicked){
+        cTimer.cancel();
         clicked.ButtonSelected();
         if(clicked == Answer){
             score+= level==1?100:level==2?200:300;
             level++;
-            //score += 100;
             clicked.CorrectAnswer(true);
             Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
