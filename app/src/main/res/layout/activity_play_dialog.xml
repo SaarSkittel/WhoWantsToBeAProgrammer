@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/UserName"
         android:gravity="center"
-        android:hint="Enter User Name"
+        android:hint="@string/Enter_User_Name"
         />
 
 </LinearLayout>

@@ -3,4 +3,35 @@
     <string name="app_name">מי רוצה להיות מתכנת</string>
     <string name="instructions_text">הוראות</string>
     <string name="info_text">תוכנה זו פותחה ע\"י עידו עמירה, איציק עזרא וסער סקיטל כפרוייקט גמר בקורס אנדרואיד.</string>
+    <string name="play">התחל משחק</string>
+    <string name="scores">טבלת שיאים</string>
+    <string name="game_over">המשחק נגמר!</string>
+    <string name="score">ניקוד:</string>
+    <string name="Replay">שחק שוב</string>
+    <string name="Home">חזרה לתפריט</string>
+    <string name="Start">התחל לשחק</string>
+    <string name="Back">חזור</string>
+    <string name="Enter_User_Name">הכנס את שמך</string>
+
+    <string-array name="EQ1">
+        <item name="Q">מה הסיבוכיות למיון מערך?</item>
+        <item name="A1">O(nlog(n))</item>
+        <item name="A2">O(n)</item>
+        <item name="A3">O(1)</item>
+        <item name="A4">O(2n)</item>
+    </string-array>
+    <string-array name="MQ1">
+        <item name="Q">מה הגודל של Integer בביטים?</item>
+        <item name="A1">4 ביטים</item>
+        <item name="A2">ביט אחד</item>
+        <item name="A3">8 ביטים</item>
+        <item name="A4">שני ביטים</item>
+    </string-array>
+    <string-array name="HQ1">
+        <item name="Q">איזה מהפעילויות הבאות של התהליך הגנרי של הframework מספק משוב?</item>
+        <item name="A1">דפלויימנט</item>
+        <item name="A2">תקשורת</item>
+        <item name="A3">מידול ובניה</item>
+        <item name="A4">תכנון</item>
+    </string-array>
 </resources>

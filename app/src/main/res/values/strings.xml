@@ -1,10 +1,19 @@
 <resources>
     <string name="app_name">Who Want\'s To Be A Programmer</string>
     <string name="info_text">This program was made by Ido Amira, Itzik Ezra and Saar Skittel as a final project for android course.</string>
-    <string name="instructions_text">instructions.</string>
+    <string name="instructions_text">Instructions.</string>
+    <string name="play">Play</string>
+    <string name="scores">Scores</string>
+    <string name="game_over">Game Over!</string>
+    <string name="score">score:</string>
+    <string name="Replay">Replay</string>
+    <string name="Home">Home</string>
+    <string name="Start">Start</string>
+    <string name="Back">Back</string>
+    <string name="Enter_User_Name">Enter User Name</string>
 
     <string-array name="EQ1">
-        <item name="Q">What is the runtime cost of allocating an array?</item>
+        <item name="Q">What is the complexity of sorting an array?</item>
         <item name="A1">O(nlog(n))</item>
         <item name="A2">O(n)</item>
         <item name="A3">O(1)</item>

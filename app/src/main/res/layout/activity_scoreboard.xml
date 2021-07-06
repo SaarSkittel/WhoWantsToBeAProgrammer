@@ -11,12 +11,12 @@
         android:id="@+id/Score"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Scores"
-        />
+        android:text="@string/scores"
+        android:textSize="40sp"
+        android:gravity="center" />
 
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/scoreboard_LV"
-      />
+        android:id="@+id/scoreboard_LV" />
 </LinearLayout>

@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                 View dialogView = getLayoutInflater().inflate(R.layout.activity_play_dialog, null);
                 EditText userNameET = dialogView.findViewById(R.id.UserName);
-                builder.setView(dialogView).setPositiveButton("Start", new DialogInterface.OnClickListener() {
+                builder.setView(dialogView).setPositiveButton(R.string.Start, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
                 View dialogView = getLayoutInflater().inflate(R.layout.activity_text_dialog, null);
                 TextView instructionText = dialogView.findViewById(R.id.text);
                 instructionText.setText(R.string.instructions_text);
-                builder.setView(dialogView).setNegativeButton("Back", new DialogInterface.OnClickListener() {
+                builder.setView(dialogView).setNegativeButton(R.string.Back, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
                 View dialogView = getLayoutInflater().inflate(R.layout.activity_text_dialog, null);
                 TextView infoText = dialogView.findViewById(R.id.text);
                 infoText.setText(R.string.info_text);
-                builder.setView(dialogView).setNegativeButton("Back", new DialogInterface.OnClickListener() {
+                builder.setView(dialogView).setNegativeButton(R.string.Back, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 

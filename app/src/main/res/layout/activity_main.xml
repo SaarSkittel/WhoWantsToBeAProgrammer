@@ -9,7 +9,6 @@
     tools:context=".MainActivity">
 
     <ImageView
-
         android:id="@+id/logo_IV"
         android:layout_width="match_parent"
         android:layout_height="1dp"
@@ -17,9 +16,7 @@
         android:layout_marginLeft="35dp"
         android:layout_marginRight="35dp"
         android:scaleType="centerCrop"
-
         android:src="@drawable/logo"/>
-
 
     <LinearLayout
         android:id="@+id/btns_LY"
@@ -35,12 +32,12 @@
             android:layout_height="67dp"
             android:layout_margin="5dp"
             android:background="@drawable/bluebuttonshape"
-            android:shadowColor="#A8A8A8"
+            android:shadowColor="@color/gray1"
             android:shadowDx="0"
             android:shadowDy="0"
             android:shadowRadius="5"
-            android:text="Play"
-            android:textColor="#FFFFFF"
+            android:text="@string/play"
+            android:textColor="@color/white"
             android:textSize="18dp" />
 
         <Button
@@ -48,32 +45,28 @@
             android:layout_width="match_parent"
             android:layout_height="67dp"
             android:layout_margin="5dp"
-
             android:background="@drawable/bluebuttonshape"
-            android:shadowColor="#A8A8A8"
+            android:shadowColor="@color/gray1"
             android:shadowDx="0"
             android:shadowDy="0"
             android:shadowRadius="5"
-            android:text="Instructions"
-            android:textColor="#FFFFFF"
+            android:text="@string/instructions_text"
+            android:textColor="@color/white"
             android:textSize="18dp" />
 
         <Button
             android:id="@+id/scores_btn"
             android:layout_width="match_parent"
             android:layout_height="67dp"
-
             android:layout_margin="5dp"
             android:background="@drawable/bluebuttonshape"
-            android:shadowColor="#A8A8A8"
+            android:shadowColor="@color/gray1"
             android:shadowDx="0"
             android:shadowDy="0"
             android:shadowRadius="5"
-            android:text="Scores"
-            android:textColor="#FFFFFF"
+            android:text="@string/scores"
+            android:textColor="@color/white"
             android:textSize="18dp" />
-
-
     </LinearLayout>
 
     <FrameLayout
@@ -108,7 +101,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.104"
             app:layout_constraintStart_toEndOf="@+id/music_btn" />
-
     </FrameLayout>
 
 </LinearLayout>

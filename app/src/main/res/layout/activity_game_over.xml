@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="0dp"
         android:gravity="center"
-        android:text="Game Over!"
+        android:text="@string/game_over"
         android:textColor="@color/white"
         android:textSize="120dp" />
 
@@ -25,7 +25,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
         android:gravity="center"
-        android:text="score:"
+        android:text="@string/score"
         android:textColor="@color/white"
         android:textSize="30dp" />
 
@@ -39,7 +39,7 @@
         android:shadowDx="0"
         android:shadowDy="0"
         android:shadowRadius="5"
-        android:text="Replay"
+        android:text="@string/Replay"
         android:textColor="#FFFFFF"
         android:textSize="18dp" />
 
@@ -52,7 +52,7 @@
         android:shadowDx="0"
         android:shadowDy="0"
         android:shadowRadius="5"
-        android:text="Home"
+        android:text="@string/Home"
         android:textColor="#FFFFFF"
         android:textSize="18dp" />
 
