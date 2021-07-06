@@ -43,6 +43,7 @@ public class GamePlayActivity extends AppCompatActivity {
     CountDownTimer cTimer = null;
     TextView ScoreTV;
     TextView NameTV;
+    
     private int score;
 
     void startTimer() {
