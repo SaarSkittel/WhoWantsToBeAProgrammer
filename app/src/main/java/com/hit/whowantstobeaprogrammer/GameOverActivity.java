@@ -18,8 +18,12 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.OutputStreamWriter;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class GameOverActivity extends AppCompatActivity {
 
@@ -44,7 +48,7 @@ public class GameOverActivity extends AppCompatActivity {
         try {
             loadScoreboard();
         } catch (IOException e) {
-
+            e.printStackTrace();
         }
         try {
             saveScoreboard();
@@ -76,11 +80,23 @@ public class GameOverActivity extends AppCompatActivity {
         else {
         scoreMap.put(name,Integer.valueOf(score));
         }
+
+        sortMap();
         FileOutputStream fileOutputStream = openFileOutput("scoreboard.hit", MODE_PRIVATE);
         ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
         objectOutputStream.writeObject(scoreMap);
         objectOutputStream.close();
 
+    }
+    private void sortMap(){
+        scoreMap = scoreMap.entrySet().stream()
+                .sorted(Comparator.comparingInt(e -> -e.getValue()))
+                .collect(Collectors.toMap(
+                        Map.Entry::getKey,
+                        Map.Entry::getValue,
+                        (a, b) -> { throw new AssertionError(); },
+                        LinkedHashMap::new
+                ));
     }
     private void musicFloatingButton() {
         musicOnOrOff = sp.getBoolean("status",true);
