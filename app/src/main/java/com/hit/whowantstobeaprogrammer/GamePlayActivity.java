@@ -27,7 +27,7 @@ import java.util.Random;
 public class GamePlayActivity extends AppCompatActivity {
     FloatingActionButton music;
     Boolean musicOnOrOff;
-    SharedPreferences sp;
+    public SharedPreferences sp;
     MediaPlayer backgroundMusic;
     AnswerButton Answer1;
     AnswerButton Answer2;
@@ -97,6 +97,16 @@ public class GamePlayActivity extends AppCompatActivity {
         Name.setText(sp.getString("user_name","")+", Score:"+ score);
         SplitLevelQuestions();
 
+<<<<<<< Updated upstream
+=======
+        Field [] fields= R.array.class.getFields();
+        ids= new ArrayList<Integer>(fields.length);
+
+        for (int i=0;i<fields.length;++i){
+            ids.add(Integer.valueOf(getResources().getIdentifier("array/" + fields[i].getName(), null, getPackageName())));
+        }
+
+>>>>>>> Stashed changes
         QuestionTV=findViewById(R.id.question_tv);
         Answer1=findViewById(R.id.answer1_btn);
         Answer2=findViewById(R.id.answer2_btn);
@@ -189,6 +199,7 @@ public class GamePlayActivity extends AppCompatActivity {
         int result = r.nextInt(curIds.size() + 0);
         return result;
     }
+
     private void gameOver(){
         SharedPreferences.Editor editor = sp.edit();
         editor.putInt("score",score);
@@ -199,6 +210,7 @@ public class GamePlayActivity extends AppCompatActivity {
         finish();
 
     }
+
     private void load(){
         if(!hardIds.isEmpty()) {
             cTimer.cancel();
@@ -250,6 +262,7 @@ public class GamePlayActivity extends AppCompatActivity {
             gameOver();
         }
     }
+
     private void musicControl() {
         if (!musicOnOrOff) {
             backgroundMusic.stop();
