@@ -40,10 +40,9 @@ public class GamePlayActivity extends AppCompatActivity {
     ArrayList<Integer>mediumIds;
     ArrayList<Integer>hardIds;
     int level = 1;
-
-
     CountDownTimer cTimer = null;
-    TextView Name;
+    TextView ScoreTV;
+    TextView NameTV;
     private int score;
 
     void startTimer() {
@@ -83,7 +82,6 @@ public class GamePlayActivity extends AppCompatActivity {
         finish();
     }
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -93,20 +91,11 @@ public class GamePlayActivity extends AppCompatActivity {
         backgroundMusic = new MediaPlayer();
         backgroundMusic = MediaPlayer.create(GamePlayActivity.this,R.raw.background);
         score=sp.getInt("score",0);
-        Name = findViewById(R.id.score);
-        Name.setText(sp.getString("user_name","")+", Score:"+ score);
+        NameTV=findViewById(R.id.name);
+        NameTV.setText(sp.getString("user_name","")+"");
+        ScoreTV = findViewById(R.id.score);
+        //ScoreTV.setText(sp.getString("user_name","")+", Score:"+ score);
         SplitLevelQuestions();
-
-<<<<<<< Updated upstream
-=======
-        Field [] fields= R.array.class.getFields();
-        ids= new ArrayList<Integer>(fields.length);
-
-        for (int i=0;i<fields.length;++i){
-            ids.add(Integer.valueOf(getResources().getIdentifier("array/" + fields[i].getName(), null, getPackageName())));
-        }
-
->>>>>>> Stashed changes
         QuestionTV=findViewById(R.id.question_tv);
         Answer1=findViewById(R.id.answer1_btn);
         Answer2=findViewById(R.id.answer2_btn);
@@ -130,18 +119,21 @@ public class GamePlayActivity extends AppCompatActivity {
         Answer1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                lockAnswer();
                 answerCheck(Answer1);
             }
         });
         Answer2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                lockAnswer();
                 answerCheck(Answer2);
             }
         });
         Answer3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                lockAnswer();
                 answerCheck(Answer3);
             }
         });
@@ -149,9 +141,24 @@ public class GamePlayActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
+                lockAnswer();
                 answerCheck(Answer4);
             }
         });
+    }
+
+    private void lockAnswer(){
+        Answer1.setClickable(false);
+        Answer2.setClickable(false);
+        Answer3.setClickable(false);
+        Answer4.setClickable(false);
+    }
+
+    private void openAnswer(){
+        Answer1.setClickable(true);
+        Answer2.setClickable(true);
+        Answer3.setClickable(true);
+        Answer4.setClickable(true);
     }
 
     private void answerCheck(AnswerButton clicked){
@@ -215,7 +222,8 @@ public class GamePlayActivity extends AppCompatActivity {
         if(!hardIds.isEmpty()) {
             cTimer.cancel();
             cTimer.start();
-            Name.setText(score+"");
+            ScoreTV.setText(score+"");
+            openAnswer();
             String [] str = null;
             if (level == 1) {
                 int questionNumber = randomizeQuestion(easyIds);
@@ -292,8 +300,5 @@ public class GamePlayActivity extends AppCompatActivity {
                 hardIds.add(Integer.valueOf(getResources().getIdentifier("array/" + fields[i].getName(), null, getPackageName())));
             }
         }
-
     }
-
-
 }

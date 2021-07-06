@@ -11,26 +11,22 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-
-        android:layout_margin="7dp">
+        android:layout_weight="0.5">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/score"
-            android:textSize="25sp"
+            android:textSize="20sp"
             android:textColor="@color/white"
             android:layout_gravity="center|start"/>
 
         <TextView
-            android:id="@+id/timer_Tv"
+            android:id="@+id/name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center|end"
             android:textColor="@color/white"
-            android:text="00:30"
-            android:textColor="@color/white"
-            android:textSize="25sp" />
+            android:textSize="20sp" />
     </FrameLayout>
 
     <TextView
@@ -39,33 +35,41 @@
         android:layout_height="0dp"
         android:layout_marginLeft="35dp"
         android:layout_marginRight="35dp"
-        android:layout_weight="2.5"
+        android:layout_weight="3.75"
         android:background="@drawable/rounded_text_view"
         android:shadowRadius="20"
         android:textSize="20dp"
         android:textStyle="italic"
-        android:gravity="center"
-
-
-        />
+        android:gravity="center" />
 
     <LinearLayout
         android:id="@+id/answer1_btns_LY"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="3.5"
-        android:layout_marginTop="50dp"
+        android:layout_weight="6"
+        android:layout_marginTop="30dp"
         android:orientation="vertical"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp">
+
+        <TextView
+            android:id="@+id/timer_Tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="30dp"
+            android:textColor="@color/white"
+            android:text="00:30"
+            android:textSize="25sp" />
 
         <com.hit.whowantstobeaprogrammer.AnswerButton
             android:id="@+id/answer1_btn"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:layout_margin="10dp"
+            android:layout_margin="5dp"
             android:textColor="#FFFFFF"
+            android:textAllCaps="false"
             android:textSize="18dp" />
 
         <com.hit.whowantstobeaprogrammer.AnswerButton
@@ -73,8 +77,9 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:layout_margin="10dp"
+            android:layout_margin="5dp"
             android:textColor="#FFFFFF"
+            android:textAllCaps="false"
             android:textSize="18dp" />
 
         <com.hit.whowantstobeaprogrammer.AnswerButton
@@ -82,8 +87,9 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:layout_margin="10dp"
+            android:layout_margin="5dp"
             android:textColor="#FFFFFF"
+            android:textAllCaps="false"
             android:textSize="18dp"/>
 
         <com.hit.whowantstobeaprogrammer.AnswerButton
@@ -91,8 +97,9 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:layout_margin="10dp"
+            android:layout_margin="5dp"
             android:textColor="#FFFFFF"
+            android:textAllCaps="false"
             android:textSize="18dp" />
     </LinearLayout>
 
@@ -100,16 +107,18 @@
         android:id="@+id/music_game_btn"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_gravity="center|end"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="30dp"
-        android:layout_weight="1"
+        android:layout_gravity="end"
+        android:layout_marginEnd="7dp"
+        android:layout_marginBottom="7dp"
+        android:layout_weight="0.75"
         android:clickable="true"
         android:src="@android:drawable/ic_lock_silent_mode_off"
         app:backgroundTint="#AC7BB5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="parent"
         app:layout_constraintHorizontal_bias="0.104"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:fabCustomSize="40dp" />
 
 </LinearLayout>
