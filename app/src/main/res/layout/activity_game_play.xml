@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".GamePlayActivity"
     android:orientation="vertical"
-    android:background="@drawable/gameplaybackground">
+    android:background="@drawable/backgroundgreen"
+    android:id="@+id/game_layout">
 
     <FrameLayout
         android:layout_width="match_parent"

@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.WhoWantsToBeAProgremmer">
-        <activity android:name=".GameOverActivity"></activity>
+        <activity android:name=".ScoreboardActivity"></activity>
+        <activity android:name=".GameOverActivity" />
         <activity android:name=".ActivityTextDialog" />
         <activity android:name=".PlayDialog" />
         <activity android:name=".GamePlayActivity" />

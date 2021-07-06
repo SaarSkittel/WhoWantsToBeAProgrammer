@@ -11,22 +11,46 @@ import android.widget.Button;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.OutputStreamWriter;
+import java.util.HashMap;
+import java.util.Map;
+
 public class GameOverActivity extends AppCompatActivity {
 
     Button replay;
     Button home;
     FloatingActionButton music;
-
+    String name;
+    int score;
     Boolean musicOnOrOff;
     SharedPreferences sp;
     MediaPlayer backgroundMusic;
+    Map<String,Integer> scoreMap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        scoreMap=new HashMap<String, Integer>();
         setContentView(R.layout.activity_game_over);
         sp=getSharedPreferences("user_details",MODE_PRIVATE);
+        name =sp.getString("user_name","");
+        score =sp.getInt("score",0);
+        try {
+            loadScoreboard();
+        } catch (IOException e) {
 
+        }
+        try {
+            saveScoreboard();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         replayButton();
 
         homeButton();
@@ -34,7 +58,30 @@ public class GameOverActivity extends AppCompatActivity {
         musicFloatingButton();
 
     }
+    private void loadScoreboard() throws IOException {
 
+        FileInputStream fileInputStream= openFileInput("scoreboard.hit");
+        ObjectInputStream objectInputStream=new ObjectInputStream(fileInputStream);
+        try {
+            scoreMap = (HashMap)objectInputStream.readObject();
+        } catch (ClassNotFoundException e) {
+
+        }
+        objectInputStream.close();
+    }
+    private void saveScoreboard() throws IOException {
+        if(scoreMap.containsValue(name)&& scoreMap.get(name).intValue() < Integer.valueOf(score)) {
+            scoreMap.replace(name, Integer.valueOf(score));
+        }
+        else {
+        scoreMap.put(name,Integer.valueOf(score));
+        }
+        FileOutputStream fileOutputStream = openFileOutput("scoreboard.hit", MODE_PRIVATE);
+        ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
+        objectOutputStream.writeObject(scoreMap);
+        objectOutputStream.close();
+
+    }
     private void musicFloatingButton() {
         musicOnOrOff = sp.getBoolean("status",true);
 

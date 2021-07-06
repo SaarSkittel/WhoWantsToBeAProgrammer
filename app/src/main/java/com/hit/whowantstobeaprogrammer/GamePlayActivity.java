@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 
@@ -25,6 +26,7 @@ import java.util.List;
 import java.util.Random;
 
 public class GamePlayActivity extends AppCompatActivity {
+    LinearLayout gameLayout;
     FloatingActionButton music;
     Boolean musicOnOrOff;
     public SharedPreferences sp;
@@ -87,6 +89,7 @@ public class GamePlayActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_play);
+        gameLayout=findViewById(R.id.game_layout);
         sp = getSharedPreferences("user_details",MODE_PRIVATE);
         musicOnOrOff = sp.getBoolean("status",true);
         backgroundMusic = new MediaPlayer();
@@ -227,14 +230,17 @@ public class GamePlayActivity extends AppCompatActivity {
             openAnswer();
             String [] str = null;
             if (level == 1) {
+                gameLayout.setBackground(getDrawable(R.drawable.backgroundgreen));
                 int questionNumber = randomizeQuestion(easyIds);
                 str = getResources().getStringArray(easyIds.get(questionNumber).intValue());
                 easyIds.remove(questionNumber);
             } else if (level == 2) {
+                gameLayout.setBackground(getDrawable(R.drawable.gameplaybackground));
                 int questionNumber = randomizeQuestion(mediumIds);
                 str = getResources().getStringArray(mediumIds.get(questionNumber).intValue());
                 mediumIds.remove(questionNumber);
             } else if (level == 3) {
+                gameLayout.setBackground(getDrawable(R.drawable.backgroundred));
                 int questionNumber = randomizeQuestion(hardIds);
                 str = getResources().getStringArray(hardIds.get(questionNumber).intValue());
                 hardIds.remove(questionNumber);

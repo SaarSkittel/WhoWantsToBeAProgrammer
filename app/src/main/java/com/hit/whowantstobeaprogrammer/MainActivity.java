@@ -13,12 +13,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class MainActivity extends AppCompatActivity {
+
     Button playButton;
     Button instructions;
     private static MediaPlayer backgroundMusic;
@@ -48,10 +50,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         backgroundMusic = new MediaPlayer();
         setContentView(R.layout.activity_main);
+
         playButton = findViewById(R.id.play_btn);
         sp = getSharedPreferences("user_details", MODE_PRIVATE);
         musicOnOrOff = sp.getBoolean("status", true);
-
+        scores = findViewById(R.id.scores_btn);
 
         playButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -118,6 +121,14 @@ public class MainActivity extends AppCompatActivity {
                 musicControl();
             }
         });
+        scores.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=  new Intent(MainActivity.this,ScoreboardActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
     }
 
