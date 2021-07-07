@@ -12,7 +12,7 @@
         android:id="@+id/logo_IV"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1.3"
+        android:layout_weight="1"
         android:layout_marginLeft="35dp"
         android:layout_marginRight="35dp"
         android:scaleType="centerCrop"
@@ -22,7 +22,7 @@
         android:id="@+id/btns_LY"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_weight="0.5"
         android:layout_marginTop="40dp"
         android:layout_marginLeft="70dp"
         android:layout_marginRight="70dp"
@@ -32,7 +32,7 @@
             android:id="@+id/play_btn"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_weight="0.5"
             android:layout_margin="5dp"
             android:background="@drawable/bluebuttonshape"
             android:shadowColor="@color/gray1"
@@ -43,26 +43,13 @@
             android:textColor="@color/white"
             android:textSize="18dp" />
 
-        <Button
-            android:id="@+id/instructions_btn"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:layout_margin="5dp"
-            android:background="@drawable/bluebuttonshape"
-            android:shadowColor="@color/gray1"
-            android:shadowDx="0"
-            android:shadowDy="0"
-            android:shadowRadius="5"
-            android:text="@string/instructions_text"
-            android:textColor="@color/white"
-            android:textSize="18dp" />
+
 
         <Button
             android:id="@+id/scores_btn"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_weight="0.5"
             android:layout_margin="5dp"
             android:background="@drawable/bluebuttonshape"
             android:shadowColor="@color/gray1"
@@ -97,23 +84,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:fabCustomSize="40dp"/>
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/info_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:clickable="true"
-            android:layout_marginStart="7dp"
-            android:layout_marginBottom="7dp"
-            android:layout_gravity="center|start"
-            android:src="@android:drawable/ic_dialog_info"
-            app:backgroundTint="@android:color/transparent"
-            android:outlineProvider="none"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="parent"
-            app:layout_constraintHorizontal_bias="0.104"
-            app:layout_constraintStart_toStartOf="parent"
-            app:fabCustomSize="40dp"/>
+
     </FrameLayout>
 
 </LinearLayout>

@@ -1,5 +1,6 @@
 package com.hit.whowantstobeaprogrammer;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,6 +11,8 @@ import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.media.SoundPool;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -22,12 +25,10 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 public class MainActivity extends AppCompatActivity {
 
     Button playButton;
-    Button instructions;
     private static MediaPlayer backgroundMusic;
     private int musicLoader;
     FloatingActionButton music;
     Button scores;
-    FloatingActionButton info;
     SharedPreferences sp;
     private boolean musicOnOrOff;
 
@@ -79,39 +80,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        instructions = findViewById(R.id.instructions_btn);
-        instructions.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-                View dialogView = getLayoutInflater().inflate(R.layout.activity_text_dialog, null);
-                TextView instructionText = dialogView.findViewById(R.id.text);
-                instructionText.setText(R.string.instructions_text);
-                builder.setView(dialogView).setNegativeButton(R.string.Back, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
 
-                    }
-                }).show();
-            }
-        });
 
-        info = findViewById(R.id.info_btn);
-        info.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-                View dialogView = getLayoutInflater().inflate(R.layout.activity_text_dialog, null);
-                TextView infoText = dialogView.findViewById(R.id.text);
-                infoText.setText(R.string.info_text);
-                builder.setView(dialogView).setNegativeButton(R.string.Back, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-
-                    }
-                }).show();
-            }
-        });
         music = findViewById(R.id.music_btn);
         musicControl();
         music.setOnClickListener(new View.OnClickListener() {
@@ -134,7 +104,39 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.action_menu,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if(item.getItemId()==R.id.about){
+            AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+            View dialogView = getLayoutInflater().inflate(R.layout.activity_text_dialog, null);
+            TextView infoText = dialogView.findViewById(R.id.text);
+            infoText.setText(R.string.info_text);
+            builder.setView(dialogView).setNegativeButton(R.string.Back, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+
+                }
+            }).show();
+        }else if(item.getItemId()==R.id.instructions){
+            AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+            View dialogView = getLayoutInflater().inflate(R.layout.activity_text_dialog, null);
+            TextView infoText = dialogView.findViewById(R.id.text);
+            infoText.setText(R.string.info_text);
+            builder.setView(dialogView).setNegativeButton(R.string.Back, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+
+                }
+            }).show();
+        }
+        return super.onOptionsItemSelected(item);
+    }
     private void musicControl() {
         if (!musicOnOrOff) {
             backgroundMusic.stop();
