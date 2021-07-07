@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -47,6 +48,11 @@ public class GamePlayActivity extends AppCompatActivity {
     TextView NameTV;
     SharedPreferences.Editor editor;
     private int score;
+    int answerCunter = 0;
+    int life = 3;
+    ImageView life1EV;
+    ImageView life2EV;
+    ImageView life3EV;
 
     void startTimer() {
         cTimer = new CountDownTimer(10000, 1000) {
@@ -111,6 +117,9 @@ public class GamePlayActivity extends AppCompatActivity {
         Answer2=findViewById(R.id.answer2_btn);
         Answer3=findViewById(R.id.answer3_btn);
         Answer4=findViewById(R.id.answer4_btn);
+        life1EV=findViewById(R.id.life1);
+        life2EV=findViewById(R.id.life2);
+        life3EV=findViewById(R.id.life3);
         music =findViewById(R.id.music_game_btn);
         music.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -172,7 +181,8 @@ public class GamePlayActivity extends AppCompatActivity {
         clicked.ButtonSelected();
         if(clicked == Answer){
             score+= level==1?100:level==2?200:300;
-            level++;
+            answerCunter++;
+            level = answerCunter<4?1:answerCunter<8?2:3;
             clicked.CorrectAnswer(true);
             Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
@@ -184,21 +194,46 @@ public class GamePlayActivity extends AppCompatActivity {
             }, 2000);
         }
         else {
+            life--;
             cTimer.cancel();
+            updateLifeImege();
             clicked.WrongAnswer();
             Answer.CorrectAnswer(false);
-            Handler handler = new Handler();
-            handler.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                  clicked.ButtonReset();
-                  Answer.ButtonReset();
-                  gameOver();
-                }
-            }, 2000);
-
+            if(life==0) {
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        clicked.ButtonReset();
+                        Answer.ButtonReset();
+                        gameOver();
+                    }
+                }, 2000);
+            }
+            else{
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        clicked.ButtonReset();
+                        Answer.ButtonReset();
+                        load();
+                    }
+                }, 2000);
+            }
         }
+    }
 
+    private void updateLifeImege(){
+        if(life==2){
+            life3EV.setImageResource(0);
+        }
+        else if(life==1){
+            life2EV.setImageResource(0);
+        }
+        else if(life==0){
+            life1EV.setImageResource(0);
+        }
     }
 
     private Integer[] randomizeAnswers(){
