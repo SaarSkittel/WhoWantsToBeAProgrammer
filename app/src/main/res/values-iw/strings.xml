@@ -12,6 +12,7 @@
     <string name="Start">התחל לשחק</string>
     <string name="Back">חזור</string>
     <string name="Enter_User_Name">הכנס את שמך</string>
+    <string name="guest">אורח</string>
 
     <string-array name="EQ1">
         <item name="Q">מה הסיבוכיות למיון מערך?</item>
@@ -34,4 +35,5 @@
         <item name="A3">מידול ובניה</item>
         <item name="A4">תכנון</item>
     </string-array>
+
 </resources>

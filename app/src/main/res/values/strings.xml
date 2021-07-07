@@ -11,6 +11,7 @@
     <string name="Start">Start</string>
     <string name="Back">Back</string>
     <string name="Enter_User_Name">Enter User Name</string>
+    <string name="guest">guest</string>
 
     <string-array name="EQ1">
         <item name="Q">What is the complexity of sorting an array?</item>

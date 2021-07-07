@@ -58,7 +58,9 @@ public class GameOverActivity extends AppCompatActivity {
             e.printStackTrace();
         }
         try {
-            saveScoreboard();
+            if(!name.equals(getResources().getString(R.string.guest))){
+                saveScoreboard();
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -65,13 +65,13 @@ public class MainActivity extends AppCompatActivity {
                 builder.setView(dialogView).setPositiveButton(R.string.Start, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-
+                        String name = userNameET.getText().toString();
+                        name = name.isEmpty()? getResources().getString(R.string.guest):name;
                         SharedPreferences.Editor editor = sp.edit();
-                        editor.putString("user_name", userNameET.getText().toString());
+                        editor.putString("user_name", name);
                         editor.putInt("score", 0);
                         editor.putBoolean("status", musicOnOrOff);
                         editor.commit();
-
                         Intent intent = new Intent(MainActivity.this, GamePlayActivity.class);
                         startActivity(intent);
                     }
