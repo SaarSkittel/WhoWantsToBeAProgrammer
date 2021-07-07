@@ -51,7 +51,7 @@ public class GameOverActivity extends AppCompatActivity {
         name =sp.getString("user_name","");
         score =sp.getInt("score",0);
 
-        scoreTV.setText("score: "+score.toString());
+        scoreTV.setText(getResources().getString(R.string.score)+score.toString());
         try {
             loadScoreboard();
         } catch (IOException e) {
@@ -157,6 +157,9 @@ public class GameOverActivity extends AppCompatActivity {
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                SharedPreferences.Editor editor = sp.edit();
+                editor.putBoolean("status",musicOnOrOff);
+                editor.commit();
                 Intent intent = new Intent(GameOverActivity.this, MainActivity.class);
                 startActivity(intent);
                 finish();
