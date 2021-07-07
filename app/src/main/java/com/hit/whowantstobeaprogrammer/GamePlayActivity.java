@@ -99,7 +99,7 @@ public class GamePlayActivity extends AppCompatActivity {
         sp = getSharedPreferences("user_details",MODE_PRIVATE);
         musicOnOrOff = sp.getBoolean("status",true);
         backgroundMusic = new MediaPlayer();
-        backgroundMusic = MediaPlayer.create(GamePlayActivity.this,R.raw.background);
+        backgroundMusic = MediaPlayer.create(GamePlayActivity.this,R.raw.gameplay);
         score=sp.getInt("score",0);
         NameTV=findViewById(R.id.name);
         NameTV.setText(sp.getString("user_name","")+"");
@@ -286,7 +286,8 @@ public class GamePlayActivity extends AppCompatActivity {
             backgroundMusic.stop();
             music.setImageResource(android.R.drawable.ic_lock_silent_mode);
         } else {
-            backgroundMusic = MediaPlayer.create(GamePlayActivity.this, R.raw.background);
+            backgroundMusic = MediaPlayer.create(GamePlayActivity.this, R.raw.gameplay);
+            backgroundMusic.setLooping(true);
             backgroundMusic.start();
             music.setImageResource(android.R.drawable.ic_lock_silent_mode_off);
         }

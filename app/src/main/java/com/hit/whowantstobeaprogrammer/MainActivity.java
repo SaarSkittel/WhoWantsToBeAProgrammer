@@ -124,6 +124,9 @@ public class MainActivity extends AppCompatActivity {
         scores.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                SharedPreferences.Editor editor = sp.edit();
+                editor.putBoolean("status", musicOnOrOff);
+                editor.commit();
                 Intent intent=  new Intent(MainActivity.this,ScoreboardActivity.class);
                 startActivity(intent);
             }
@@ -137,7 +140,8 @@ public class MainActivity extends AppCompatActivity {
             backgroundMusic.stop();
             music.setImageResource(android.R.drawable.ic_lock_silent_mode);
         } else {
-            backgroundMusic = MediaPlayer.create(MainActivity.this, R.raw.background);
+            backgroundMusic = MediaPlayer.create(MainActivity.this, R.raw.main);
+            backgroundMusic.setLooping(true);
             backgroundMusic.start();
             music.setImageResource(android.R.drawable.ic_lock_silent_mode_off);
         }

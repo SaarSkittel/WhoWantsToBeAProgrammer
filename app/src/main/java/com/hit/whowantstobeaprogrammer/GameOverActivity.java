@@ -111,7 +111,7 @@ public class GameOverActivity extends AppCompatActivity {
         musicOnOrOff = sp.getBoolean("status",true);
 
         backgroundMusic = new MediaPlayer();
-        backgroundMusic = MediaPlayer.create(GameOverActivity.this,R.raw.background);
+        backgroundMusic = MediaPlayer.create(GameOverActivity.this,R.raw.gameover);
 
         music = findViewById(R.id.music_btn_gameover);
         music.setOnClickListener(new View.OnClickListener() {
@@ -148,7 +148,8 @@ public class GameOverActivity extends AppCompatActivity {
             backgroundMusic.stop();
             music.setImageResource(android.R.drawable.ic_lock_silent_mode);
         } else {
-            backgroundMusic = MediaPlayer.create(GameOverActivity.this, R.raw.background);
+            backgroundMusic = MediaPlayer.create(GameOverActivity.this, R.raw.gameover);
+            backgroundMusic.setLooping(true);
             backgroundMusic.start();
             music.setImageResource(android.R.drawable.ic_lock_silent_mode_off);
         }
