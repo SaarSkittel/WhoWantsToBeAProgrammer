@@ -1,71 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/purple_500"
-    android:orientation="vertical"
+    android:background="@drawable/gameoverscreen"
     tools:context=".GamePlayActivity">
 
-    <TextView
-        android:id="@+id/game_over"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="0dp"
-        android:gravity="center"
-        android:text="@string/game_over"
-        android:textColor="@color/white"
-        android:textSize="120dp" />
 
     <TextView
         android:id="@+id/score"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
+        android:layout_centerInParent="true"
         android:gravity="center"
         android:text="@string/score"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="30dp" />
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="40dp"
+    android:layout_centerInParent="true"
+    android:layout_below="@id/score"
+    android:orientation="vertical"
+    >
+
 
     <Button
+        android:layout_weight="1"
         android:id="@+id/replay_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/buttonshape"
-        android:shadowColor="#A8A8A8"
+        android:shadowColor="@color/gray1"
         android:shadowDx="0"
         android:shadowDy="0"
         android:shadowRadius="5"
         android:text="@string/Replay"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/white"
         android:textSize="18dp" />
 
     <Button
+        android:layout_weight="1"
         android:id="@+id/home_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
         android:background="@drawable/buttonshape"
-        android:shadowColor="#A8A8A8"
+        android:shadowColor="@color/gray1"
         android:shadowDx="0"
         android:shadowDy="0"
         android:shadowRadius="5"
         android:text="@string/Home"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/white"
         android:textSize="18dp" />
+</LinearLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/music_btn_gameover"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center|end"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="20dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
         android:clickable="true"
+        android:outlineProvider="none"
         android:src="@android:drawable/ic_lock_silent_mode_off"
-        app:backgroundTint="#AC7BB5"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:backgroundTint="@android:color/transparent" />
 
-</LinearLayout>
+</RelativeLayout>
