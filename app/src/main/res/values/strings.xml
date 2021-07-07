@@ -27,12 +27,122 @@
         <item name="A3">8 Bytes</item>
         <item name="A4">2 Bytes</item>
     </string-array>
+
     <string-array name="HQ1">
         <item name="Q">Which of the following activities of Generic Process framework provides a feedback report?</item>
         <item name="A1">Deployment</item>
         <item name="A2">Communication</item>
         <item name="A3">Modeling and Construction</item>
         <item name="A4">Planning</item>
+    </string-array>
+
+    <string-array name="EQ2">
+        <item name="Q">What problem will VCS solve?</item>
+        <item name="A1">Version management</item>
+        <item name="A2">The ozone hole</item>
+        <item name="A3">efficiency</item>
+        <item name="A4">None of the above</item>
+    </string-array>
+    <string-array name="MQ2">
+        <item name="Q">To which model does the sequence diagram belong?</item>
+        <item name="A1">interaction model</item>
+        <item name="A2">structure model</item>
+        <item name="A3">Behavior model</item>
+        <item name="A4">None of the above</item>
+    </string-array>
+    <string-array name="MQ3">
+        <item name="Q">To which model does the UML belong?</item>
+        <item name="A1">None of the above</item>
+        <item name="A2">structure model</item>
+        <item name="A3">Behavior model</item>
+        <item name="A4">interaction model</item>
+    </string-array>
+    <string-array name="MQ4">
+        <item name="Q">What need  does SINGLETON answer?</item>
+        <item name="A1">Using a single instance</item>
+        <item name="A2">close open principle</item>
+        <item name="A3">Loosely decouple</item>
+        <item name="A4">Parallelism</item>
+    </string-array>
+    <string-array name="MQ5">
+        <item name="Q">To which model does the class diagram belong??</item>
+        <item name="A1">development and design</item>
+        <item name="A2">model interaction</item>
+        <item name="A3">model structure</item>
+        <item name="A4">requirements</item>
+    </string-array>
+
+
+    <string-array name="HQ2">
+        <item name="Q">מהו הטיפוס של descriptor socket?</item>
+        <item name="A1">int</item>
+        <item name="A2">struct</item>
+        <item name="A3">class</item>
+        <item name="A4">double</item>
+    </string-array>
+    <string-array name="HQ3">
+        <item name="Q">What protocol in the traffic layer does the DNS server usually work on?</item>
+        <item name="A1">UDP</item>
+        <item name="A2">TCP</item>
+        <item name="A3">IP</item>
+        <item name="A4">None of the above</item>
+    </string-array>
+    <string-array name="HQ4">
+        <item name="Q">Which of the following comes to solve the address shortage?</item>
+        <item name="A1">NAT</item>
+        <item name="A2">Router</item>
+        <item name="A3">Switch</item>
+        <item name="A4">DNS</item>
+    </string-array>
+
+    <string-array name="HQ5">
+        <item name="Q">Which of the following algorithms is based on the idea of bagging?</item>
+        <item name="A1">Random forest</item>
+        <item name="A2">Classification</item>
+        <item name="A3">regression</item>
+        <item name="A4">decision tree</item>
+    </string-array>
+    <string-array name="HQ6">
+        <item name="Q">Common indicators for evaluating a classification model are:</item>
+        <item name="A1">Confusion matrix</item>
+        <item name="A2">MSE</item>
+        <item name="A3">SSE</item>
+        <item name="A4">all of the above</item>
+    </string-array>
+    <string-array name="HQ7">
+        <item name="Q">Which of the following is the disadvantage of decision trees?</item>
+        <item name="A1">Overfit</item>
+        <item name="A2">Underfit</item>
+        <item name="A3">PCA</item>
+        <item name="A4">SSE</item>
+    </string-array>
+    <string-array name="HQ8">
+        <item name="Q">Why is it important to perform scaling on KNN?</item>
+        <item name="A1">Avoid calculation errors</item>
+        <item name="A2">Does not matter</item>
+        <item name="A3">Reducing space complications</item>
+        <item name="A4">To produce orthogonality</item>
+    </string-array>
+    <string-array name="HQ9">
+        <item name="Q">We will use hierarchical clustering when</item>
+        <item name="A1">The number of clusters is unknown </item>
+        <item name="A2">There is a linear separation </item>
+        <item name="A3">Large training set</item>
+        <item name="A4">A simple division is enough</item>
+    </string-array>
+    <string-array name="QH10">
+        <item name = "Q"> Decision tree is a model </item>
+        <item name = "A1"> Discriminatory </item>
+        <item name = "A2"> Generative </item>
+        <item name = "A3"> Linear </item>
+        <item name = "A4"> Iterty </item>
+    </string-array>
+    <string-array name="QH11">
+        <item name = "Q"> Naive Base uses the model </item>
+        <item name = "A1"> Generative </item>
+        <item name = "A2"> Discriminatory </item>
+        <item name = "A3"> Linear </item>
+        <item name = "A4"> Iterty </item>
     </string-array>
 
 </resources>

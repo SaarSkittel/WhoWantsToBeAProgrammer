@@ -36,4 +36,113 @@
         <item name="A4">תכנון</item>
     </string-array>
 
+    <string-array name="EQ2">
+        <item name="Q">איזו בעיה, בא לפתור ה – VCS?</item>
+        <item name="A1">ניהול גירסאות</item>
+        <item name="A2">בעיית החור באוזון</item>
+        <item name="A3">בעיות של יעילות</item>
+        <item name="A4">אף תשובה אינה נכונה</item>
+    </string-array>
+    <string-array name="MQ2">
+        <item name="Q">.לאיזה מודל שייך ה -  sequence diagram?</item>
+        <item name="A1">interaction model</item>
+        <item name="A2">structure model</item>
+        <item name="A3">Behavior model</item>
+        <item name="A4">אף תשובה אינה נכונה</item>
+    </string-array>
+    <string-array name="MQ3">
+        <item name="Q">לאיזה מודל שייך ה - UML?</item>
+        <item name="A1">אף תשובה אינה נכונה</item>
+        <item name="A2">structure model</item>
+        <item name="A3">Behavior model</item>
+        <item name="A4">interaction model</item>
+    </string-array>
+    <string-array name="MQ4">
+        <item name="Q">.על איזו צורך עונה ה - Singleton?</item>
+        <item name="A1">שימוש במופע יחיד</item>
+        <item name="A2">עקרון ה – close open</item>
+        <item name="A3">Loosely decouple</item>
+        <item name="A4">מקביליות</item>
+    </string-array>
+    <string-array name="MQ5">
+        <item name="Q">לאיזה שלב שייך ה - diagram class?</item>
+        <item name="A1">development and design</item>
+        <item name="A2">model interaction</item>
+        <item name="A3">model structure</item>
+        <item name="A4">requirements</item>
+    </string-array>
+
+    <string-array name="HQ2">
+        <item name="Q">מהו הטיפוס של descriptor socket?</item>
+        <item name="A1">int</item>
+        <item name="A2">struct</item>
+        <item name="A3">class</item>
+        <item name="A4">double</item>
+    </string-array>
+    <string-array name="HQ3">
+        <item name="Q">על איזה פרוטוקול בשכבת התעבורה שרת DNS עובד בדר"כ?</item>
+        <item name="A1">UDP</item>
+        <item name="A2">TCP</item>
+        <item name="A3">IP</item>
+        <item name="A4">אף תשובה אינה נכונה</item>
+    </string-array>
+    <string-array name="HQ4">
+        <item name="Q">אלו מבין הבאים בא לפתור את מצוקת הכתובות?</item>
+        <item name="A1">NAT</item>
+        <item name="A2">Router</item>
+        <item name="A3">Switch</item>
+        <item name="A4">DNS</item>
+    </string-array>
+
+    <string-array name="HQ5">
+        <item name="Q">איזה מהאלגריתמים הבאים מבוסס על רעיון ה-bagging?</item>
+        <item name="A1">Random forest</item>
+        <item name="A2">סיווג</item>
+        <item name="A3">רגרסיה</item>
+        <item name="A4">עץ החלטות</item>
+    </string-array>
+    <string-array name="HQ6">
+        <item name="Q">המדדים הנפוצים להערכת מודל סיווג הם:</item>
+        <item name="A1">Confusion matrix</item>
+        <item name="A2">MSE</item>
+        <item name="A3">SSE</item>
+        <item name="A4">כל התשובות נכונות</item>
+    </string-array>
+    <string-array name="HQ7">
+        <item name="Q">מה מהבאים הוא החיסרון של עצי ההחלטה?</item>
+        <item name="A1">Overfit</item>
+        <item name="A2">Underfit</item>
+        <item name="A3">PCA</item>
+        <item name="A4">SSE</item>
+    </string-array>
+    <string-array name="HQ8">
+        <item name="Q">מדוע חשוב לבצע scaling ב-KNN?</item>
+        <item name="A1">למנוע טעויות חישוב </item>
+        <item name="A2">אין חשיבות</item>
+        <item name="A3">הורדת סיבוכיות מקום</item>
+        <item name="A4">בשביל לייצר אורתוגונליות</item>
+    </string-array>
+    <string-array name="HQ9">
+        <item name="Q">נשתמש ב- clustering הירארכי כאשר</item>
+        <item name="A1">מספר האשכולות לא ידוע </item>
+        <item name="A2">ישנה הפרדה ליניארית </item>
+        <item name="A3">סט האימון גדול</item>
+        <item name="A4">חלוקה פשוטה מספיקה</item>
+    </string-array>
+    <string-array name="QH10">
+        <item name="Q">עץ החלטה הוא מודל </item>
+        <item name="A1">דיסקרמנטיבי </item>
+        <item name="A2">גנרטיבי </item>
+        <item name="A3">ליניארי</item>
+        <item name="A4">איטרטבי</item>
+    </string-array>
+    <string-array name="QH11">
+        <item name="Q"> נאייב בייס משתמש במודל </item>
+        <item name="A1">גנרטיבי </item>
+        <item name="A2">דיסקרמנטיבי </item>
+        <item name="A3">ליניארי</item>
+        <item name="A4">איטרטבי</item>
+    </string-array>
+
+
 </resources>
