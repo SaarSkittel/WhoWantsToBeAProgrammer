@@ -8,6 +8,7 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -31,20 +32,26 @@ public class GameOverActivity extends AppCompatActivity {
     Button home;
     FloatingActionButton music;
     String name;
-    int score;
+    Integer score;
     Boolean musicOnOrOff;
     SharedPreferences sp;
     MediaPlayer backgroundMusic;
     Map<String,Integer> scoreMap;
+    TextView scoreTV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         scoreMap=new HashMap<String, Integer>();
         setContentView(R.layout.activity_game_over);
+        scoreTV=findViewById(R.id.score);
+
+
         sp=getSharedPreferences("user_details",MODE_PRIVATE);
         name =sp.getString("user_name","");
         score =sp.getInt("score",0);
+
+        scoreTV.setText("score: "+score.toString());
         try {
             loadScoreboard();
         } catch (IOException e) {
@@ -162,7 +169,10 @@ public class GameOverActivity extends AppCompatActivity {
         replay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                SharedPreferences.Editor editor = sp.edit();
+                editor.putInt("score",0);
+                editor.putBoolean("status",musicOnOrOff);
+                editor.commit();
                 Intent intent = new Intent(GameOverActivity.this, GamePlayActivity.class);
                 startActivity(intent);
                 finish();
