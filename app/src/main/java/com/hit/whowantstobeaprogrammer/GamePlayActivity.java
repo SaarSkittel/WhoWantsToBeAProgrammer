@@ -45,7 +45,7 @@ public class GamePlayActivity extends AppCompatActivity {
     CountDownTimer cTimer = null;
     TextView ScoreTV;
     TextView NameTV;
-
+    SharedPreferences.Editor editor;
     private int score;
 
     void startTimer() {
@@ -72,6 +72,9 @@ public class GamePlayActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
+        editor =sp.edit();
+        editor.putBoolean("status",musicOnOrOff);
+        editor.commit();
         backgroundMusic.pause();
         cTimer.cancel();
         finish();
@@ -80,6 +83,9 @@ public class GamePlayActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        editor =sp.edit();
+        editor.putBoolean("status",musicOnOrOff);
+        editor.commit();
         backgroundMusic.stop();
         cTimer.cancel();
         finish();
@@ -123,21 +129,21 @@ public class GamePlayActivity extends AppCompatActivity {
         Answer1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                lockAnswer();
+                AnswerClickable(false);
                 answerCheck(Answer1);
             }
         });
         Answer2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                lockAnswer();
+                AnswerClickable(false);
                 answerCheck(Answer2);
             }
         });
         Answer3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                lockAnswer();
+                AnswerClickable(false);
                 answerCheck(Answer3);
             }
         });
@@ -145,28 +151,24 @@ public class GamePlayActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                lockAnswer();
+                AnswerClickable(false);
                 answerCheck(Answer4);
             }
         });
     }
 
-    private void lockAnswer(){
-        Answer1.setClickable(false);
-        Answer2.setClickable(false);
-        Answer3.setClickable(false);
-        Answer4.setClickable(false);
+
+    private void AnswerClickable(boolean bool){
+        Answer1.setClickable(bool);
+        Answer2.setClickable(bool);
+        Answer3.setClickable(bool);
+        Answer4.setClickable(bool);
     }
 
-    private void openAnswer(){
-        Answer1.setClickable(true);
-        Answer2.setClickable(true);
-        Answer3.setClickable(true);
-        Answer4.setClickable(true);
-    }
 
     private void answerCheck(AnswerButton clicked){
         cTimer.cancel();
+
         clicked.ButtonSelected();
         if(clicked == Answer){
             score+= level==1?100:level==2?200:300;
@@ -196,6 +198,7 @@ public class GamePlayActivity extends AppCompatActivity {
             }, 2000);
 
         }
+
     }
 
     private Integer[] randomizeAnswers(){
@@ -212,7 +215,7 @@ public class GamePlayActivity extends AppCompatActivity {
     }
 
     private void gameOver(){
-        SharedPreferences.Editor editor = sp.edit();
+        editor = sp.edit();
         editor.putInt("score",score);
         editor.putBoolean("status",musicOnOrOff);
         editor.commit();
@@ -227,7 +230,7 @@ public class GamePlayActivity extends AppCompatActivity {
             cTimer.cancel();
             cTimer.start();
             ScoreTV.setText(score+"");
-            openAnswer();
+            AnswerClickable(true);
             String [] str = null;
             if (level == 1) {
                 gameLayout.setBackground(getDrawable(R.drawable.backgroundgreen));
