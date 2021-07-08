@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.ArrayMap;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.SimpleAdapter;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -15,6 +16,7 @@ import java.io.ObjectInputStream;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class ScoreboardActivity extends AppCompatActivity {
@@ -60,10 +62,36 @@ public class ScoreboardActivity extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        ArrayAdapter<String> arrayAdapter= new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, mapToArr());
-        scoreboard.setAdapter(arrayAdapter);
+        //ArrayAdapter<String> arrayAdapter= new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, mapToArr());
+        //scoreboard.setAdapter(arrayAdapter);
+        SimpleAdapter simpleAdapter = createSimpleAdapter();
+        scoreboard.setAdapter(simpleAdapter);
     }
-    private ArrayList<String> mapToArr(){
+
+    private SimpleAdapter createSimpleAdapter(){
+        String[] names = scoreMap.keySet().toArray(new String[0]);
+        Integer[] scores=scoreMap.values().toArray(new Integer[0]);
+        List<Map<String,Object>> data = new ArrayList<>();
+        for(int i=0; i<names.length; ++i){
+            HashMap<String,Object> item = new HashMap<>();
+            item.put("name",names[i]);
+            item.put("score",scores[i]);
+            if(i==0){
+                item.put("img",R.drawable.cup1);
+            }
+            else if(i==1){
+                item.put("img",R.drawable.cup2);
+            }
+            else{
+                item.put("img",R.drawable.cup3);
+            }
+            data.add(item);
+        }
+        String[] from = {"name","score","img"};
+        int[] ids = {R.id.nameboard,R.id.scoreboard,R.id.cup};
+        return new SimpleAdapter(this,data,R.layout.scoreboard_cell,from,ids);
+    }
+    /*private ArrayList<String> mapToArr(){
         String[] names = scoreMap.keySet().toArray(new String[0]);
         Integer[] scores=scoreMap.values().toArray(new Integer[0]);
         ArrayList<String>namesAndScores= new ArrayList<String>();
@@ -72,7 +100,7 @@ public class ScoreboardActivity extends AppCompatActivity {
             namesAndScores.add(i,"name:"+names[i]+" score:"+scores[i].toString());
         }
         return namesAndScores;
-    }
+    }*/
     private void loadScoreboard() throws IOException {
 
         FileInputStream fileInputStream= openFileInput("scoreboard.hit");
