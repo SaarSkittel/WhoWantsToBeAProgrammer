@@ -1,7 +1,17 @@
 <resources>
     <string name="app_name">Who Want\'s To Be A Programmer</string>
-    <string name="info_text">This program was made by Ido Amira, Itzik Ezra and Saar Skittel as a final project for android course.</string>
-    <string name="instructions_text">Instructions</string>
+    <string name="about_text">This program was made by Ido Amira, Itzik Ezra and Saar Skittel as a final project for android course.</string>
+    <string name="instructions_title">Instructions</string>
+    <string name="instructions_text">Welcome to “Who wants to be a programmer”!
+The peruse of this app is to teach and improve your knowledge as a programmer.
+This app as questions in different levels indicated by the background of the question screen:
+Green-  are easy difficulty questions worth 100 points.
+Blue-  are medium difficulty questions worth 200 points.
+Red-  are hard difficulty questions worth 300 points.
+The goal of this game is to answer correctly on as much questions as you can and collect more points. In every game there are the strikes that you can answer wrong after that or after you answer all the answers correctly the game is over.
+Good Luck!
+</string>
+    <string name="about_title">About</string>
     <string name="play">Play</string>
     <string name="scores">Scores</string>
     <string name="game_over">Game Over!</string>

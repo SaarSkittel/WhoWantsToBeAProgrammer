@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">מי רוצה להיות מתכנת</string>
-    <string name="instructions_text">הוראות</string>
-    <string name="info_text">תוכנה זו פותחה ע\"י עידו עמירה, איציק עזרא וסער סקיטל כפרוייקט גמר בקורס אנדרואיד.</string>
+    <string name="about_text">תוכנה זו פותחה ע\"י עידו עמירה, איציק עזרא וסער סקיטל כפרוייקט גמר בקורס אנדרואיד.</string>
     <string name="play">התחל משחק</string>
     <string name="scores">טבלת שיאים</string>
     <string name="game_over">המשחק נגמר!</string>
@@ -250,6 +249,9 @@
         <item name = "A3">O(n log n)</item>
         <item name = "A4"> O(1)</item>
     </string-array>
+    <string name="instructions_title">הוראות</string>
+    <string name="about_title">אודות</string>
+    <string name="instructions_text">"ברוכים הבאים ל\"מי רוצה להיות מתכנת\"! מטרת האפלציה היא ללמד ולשפר את הידע שלך כמתכנת. לאפליקציה שאלות בדרגות קושי שונות שמסומנות לפי הרקע של מסך השאלות: ירוק- שאלות קלות המזכות 100 נק'. כחול- שאלות בינוניות המזכות 200 נק'. אדום- שאלות קשות המזכות 300 נק'. מטרת המשחק היא לענות על כמה שיותר שאלות נכון ולצבור כמה שיותר נקודות. בכל משחק יש 3 פסילות שבתומם או שעניתם על כל השאלות נכון נגמר המשחק.  בהצלחה! "</string>
 
 
 </resources>
