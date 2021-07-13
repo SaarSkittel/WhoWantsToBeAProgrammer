@@ -205,7 +205,7 @@ Good Luck!
     </string-array>
 
     <string-array name="HQ2">
-        <item name="Q">מהו הטיפוס של descriptor socket?</item>
+        <item name="Q">what is the type of descriptor socket?</item>
         <item name="A1">int</item>
         <item name="A2">struct</item>
         <item name="A3">class</item>
