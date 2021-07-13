@@ -182,7 +182,7 @@ public class GamePlayActivity extends AppCompatActivity {
         if(clicked == Answer){
             score+= level==1?100:level==2?200:300;
             answerCunter++;
-            level = answerCunter<4?1:answerCunter<8?2:3;
+            level = answerCunter<6?1:answerCunter<12?2:3;
             clicked.CorrectAnswer(true);
             Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
