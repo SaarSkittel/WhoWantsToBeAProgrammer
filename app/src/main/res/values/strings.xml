@@ -35,13 +35,12 @@ Good Luck!
     </string-array>
 
     <string-array name="EQ2">
-        <item name="Q">What problem will VCS solve?</item>
-        <item name="A1">Version management</item>
-        <item name="A2">The ozone hole</item>
-        <item name="A3">efficiency</item>
-        <item name="A4">None of the above</item>
+        <item name="Q">How many bytes are in an integer?</item>
+        <item name="A1">4 Bytes</item>
+        <item name="A2">1 Bytes</item>
+        <item name="A3">8 Bytes</item>
+        <item name="A4">2 Bytes</item>
     </string-array>
-
     <!--
   <string-array name="EQ3">
       <item name="Q">Which of the following is the correct way of making a String in Java?</item>
@@ -52,70 +51,64 @@ Good Luck!
   </string-array>
   -->
 
-    <string-array name="EQ4">
+    <string-array name="EQ3">
         <item name="Q">Which of the following is the correct way to use the standard namespace in C++?</item>
         <item name="A1">Using namespace std;</item>
         <item name="A2">Using namespace standard;</item>
         <item name="A3">Using standard namespace;</item>
         <item name="A4">Standard namespace used;</item>
     </string-array>
-    <string-array name="EQ5">
+    <string-array name="EQ4">
         <item name="Q">Python is _____ programming language.</item>
         <item name="A1">high-level</item>
         <item name="A2">mid-level</item>
         <item name="A3">low-level</item>
         <item name="A4">none of the above</item>
     </string-array>
-    <string-array name="EQ6">
-        <item name="Q">Which of the following is not a type of computer code related to Program Execution?</item>
-        <item name="A1">Hex Code</item>
-        <item name="A2">Machine Code</item>
-        <item name="A3">Bytecode</item>
-        <item name="A4">Source code</item>
-    </string-array>
-    <string-array name="EQ7">
+
+    <string-array name="EQ5">
         <item name="Q">Which of the following is not a programming language?</item>
         <item name="A1">Anaconda</item>
         <item name="A2">Java</item>
         <item name="A3">Python</item>
         <item name="A4">TypeScript</item>
     </string-array>
-    <string-array name="EQ8">
+    <string-array name="EQ6">
         <item name="Q">In c++, What command do you use to output data to the screen?</item>
         <item name="A1">Cout</item>
         <item name="A2">Cin</item>
         <item name="A3">Print</item>
         <item name="A4">System.OutPrint</item>
     </string-array>
-    <string-array name="EQ9">
+    <string-array name="EQ7">
         <item name="Q">In Java, What command do you use to output data to the screen?</item>
         <item name="A1">System.OutPrint</item>
         <item name="A2">Cin</item>
         <item name="A3">Print</item>
         <item name="A4">Cout</item>
     </string-array>
-    <string-array name="EQ10">
+    <string-array name="EQ8">
         <item name="Q">In Python, What command do you use to output data to the screen?</item>
         <item name="A1">print</item>
         <item name="A2">System.OutPrint</item>
         <item name="A3">Cin</item>
         <item name="A4">Cout</item>
     </string-array>
-    <string-array name="EQ11">
+    <string-array name="EQ9">
         <item name="Q">In C#, What command do you use to output data to the screen?</item>
         <item name="A1">Console.Write</item>
         <item name="A2">System.Out.Print</item>
         <item name="A3">Cin</item>
         <item name="A4">Cout</item>
     </string-array>
-    <string-array name="EQ12">
+    <string-array name="EQ10">
         <item name="Q">A memory location that holds a single letter or number</item>
         <item name="A1">Char</item>
         <item name="A2">Int</item>
         <item name="A3">Double</item>
         <item name="A4">File</item>
     </string-array>
-    <string-array name="EQ13">
+    <string-array name="EQ11">
         <item name="Q">What does HTML stand for?</item>
         <item name="A1">Hyper Text Markup Language</item>
         <item name="A2">Hyper Trainer Marking Language</item>
@@ -123,23 +116,15 @@ Good Luck!
         <item name="A4">Hyper Text Markup Leveler</item>
     </string-array>
 
-    <string-array name="EQ14">
-    <item name="Q">The two kinds of main memory are</item>
-    <item name="A1">RAM and ROM</item>
-    <item name="A2">Primary and secondary</item>
-    <item name="A3">Direct and sequential</item>
-    <item name="A4">CDs and DVDs</item>
+    <string-array name="EQ12">
+        <item name="Q">The two kinds of main memory are</item>
+        <item name="A1">RAM and ROM</item>
+        <item name="A2">Primary and secondary</item>
+        <item name="A3">Direct and sequential</item>
+        <item name="A4">CDs and DVDs</item>
     </string-array>
 
-    <string-array name="EQ15">
-        <item name="Q">RAM is also called as</item>
-        <item name="A1">Volatile memory</item>
-        <item name="A2">Virtual memory</item>
-        <item name="A3">Non volatile memory</item>
-        <item name="A4">Cache memory</item>
-    </string-array>
-
-    <string-array name="EQ16">
+    <string-array name="EQ13">
         <item name="Q">The first phase of software development is</item>
         <item name="A1">Requirement analysis</item>
         <item name="A2">Coding</item>
@@ -147,7 +132,7 @@ Good Luck!
         <item name="A4">Design</item>
     </string-array>
 
-    <string-array name="EQ17">
+    <string-array name="EQ14">
         <item name="Q">Which of the following data structures are indexed structures?</item>
         <item name="A1">Linear arrays</item>
         <item name="A2">Linked lists</item>
@@ -157,43 +142,57 @@ Good Luck!
 
     <!--Medium -->
 
-    <string-array name="MQ1">
-        <item name="Q">How many bytes are in an integer?</item>
-        <item name="A1">4 Bytes</item>
-        <item name="A2">1 Bytes</item>
-        <item name="A3">8 Bytes</item>
-        <item name="A4">2 Bytes</item>
-    </string-array>
 
-    <string-array name="MQ2">
+
+    <string-array name="MQ1">
         <item name="Q">To which model does the sequence diagram belong?</item>
         <item name="A1">interaction model</item>
         <item name="A2">structure model</item>
         <item name="A3">Behavior model</item>
         <item name="A4">None of the above</item>
     </string-array>
-    <string-array name="MQ3">
+    <string-array name="MQ2">
         <item name="Q">To which model does the UML belong?</item>
         <item name="A1">None of the above</item>
         <item name="A2">structure model</item>
         <item name="A3">Behavior model</item>
         <item name="A4">interaction model</item>
     </string-array>
-    <string-array name="MQ4">
+    <string-array name="MQ3">
         <item name="Q">What need  does SINGLETON answer?</item>
         <item name="A1">Using a single instance</item>
         <item name="A2">close open principle</item>
         <item name="A3">Loosely decouple</item>
         <item name="A4">Parallelism</item>
     </string-array>
-    <string-array name="MQ5">
+    <string-array name="MQ4">
         <item name="Q">To which model does the class diagram belong??</item>
         <item name="A1">development and design</item>
         <item name="A2">model interaction</item>
         <item name="A3">model structure</item>
         <item name="A4">requirements</item>
     </string-array>
-
+    <string-array name="MQ5">
+        <item name="Q">What problem will VCS solve?</item>
+        <item name="A1">Version management</item>
+        <item name="A2">The ozone hole</item>
+        <item name="A3">efficiency</item>
+        <item name="A4">None of the above</item>
+    </string-array>
+    <string-array name="MQ6">
+        <item name="Q">Which of the following is not a type of computer code related to Program Execution?</item>
+        <item name="A1">Hex Code</item>
+        <item name="A2">Machine Code</item>
+        <item name="A3">Bytecode</item>
+        <item name="A4">Source code</item>
+    </string-array>
+    <string-array name="MQ7">
+        <item name="Q">RAM is also called as</item>
+        <item name="A1">Volatile memory</item>
+        <item name="A2">Virtual memory</item>
+        <item name="A3">Non volatile memory</item>
+        <item name="A4">Cache memory</item>
+    </string-array>
     <!--Hard -->
 
     <string-array name="HQ1">
@@ -274,7 +273,6 @@ Good Luck!
         <item name = "A2"> Discriminatory </item>
         <item name = "A3"> Linear </item>
         <item name = "A4"> Iterty </item>
-
     </string-array>
 
     <string-array name="HQ12">

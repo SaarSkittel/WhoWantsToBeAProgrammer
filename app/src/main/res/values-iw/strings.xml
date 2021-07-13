@@ -13,6 +13,9 @@
     <string name="Enter_User_Name">הכנס את שמך</string>
     <string name="guest">אורח</string>
     <string name="name">שם:</string>
+    <string name="instructions_title">הוראות</string>
+    <string name="about_title">אודות</string>
+    <string name="instructions_text">"ברוכים הבאים ל\"מי רוצה להיות מתכנת\"! מטרת האפלציה היא ללמד ולשפר את הידע שלך כמתכנת. לאפליקציה שאלות בדרגות קושי שונות שמסומנות לפי הרקע של מסך השאלות: ירוק- שאלות קלות המזכות 100 נק'. כחול- שאלות בינוניות המזכות 200 נק'. אדום- שאלות קשות המזכות 300 נק'. מטרת המשחק היא לענות על כמה שיותר שאלות נכון ולצבור כמה שיותר נקודות. בכל משחק יש 3 פסילות שבתומם או שעניתם על כל השאלות נכון נגמר המשחק.  בהצלחה! "</string>
 
     <!--Easy -->
     <string-array name="EQ1">
@@ -22,119 +25,7 @@
         <item name="A3">O(1)</item>
         <item name="A4">O(2n)</item>
     </string-array>
-
     <string-array name="EQ2">
-        <item name="Q">איזו בעיה, בא לפתור ה – VCS?</item>
-        <item name="A1">ניהול גירסאות</item>
-        <item name="A2">בעיית החור באוזון</item>
-        <item name="A3">בעיות של יעילות</item>
-        <item name="A4">אף תשובה אינה נכונה</item>
-    </string-array>
-
-
-    <string-array name="EQ4">
-        <item name="Q">מהי הדרך הנכונה להכריז עלnamespace standard בC++ ?</item>
-        <item name="A1">Using namespace std;</item>
-        <item name="A2">Using namespace standard;</item>
-        <item name="A3">Using standard namespace;</item>
-        <item name="A4">Standard namespace used;</item>
-    </string-array>
-    <string-array name="EQ5">
-        <item name="Q">פייתון נחשבת כ.</item>
-        <item name="A1">שפה עילית</item>
-        <item name="A2">שפה בינונית</item>
-        <item name="A3">שפה נמוכה</item>
-        <item name="A4">אף תשובה אינה נכונה</item>
-    </string-array>
-    <string-array name="EQ6">
-        <item name="Q">איזה מהבאים אינו סוג של מסמך קוד  הקשור לביצוע התוכנית?</item>
-        <item name="A1">Hex Code</item>
-        <item name="A2">Machine Code</item>
-        <item name="A3">Bytecode</item>
-        <item name="A4">Source code</item>
-    </string-array>
-    <string-array name="EQ7">
-        <item name="Q">איזה מהבאים אינו שפת תכנות?</item>
-        <item name="A1">Anaconda</item>
-        <item name="A2">Java</item>
-        <item name="A3">Python</item>
-        <item name="A4">TypeScript</item>
-    </string-array>
-    <string-array name="EQ8">
-        <item name="Q">בC++, איזה מהפקודות ידפסו למסך</item>
-        <item name="A1">Cout</item>
-        <item name="A2">Cin</item>
-        <item name="A3">Print</item>
-        <item name="A4">System.OutPrint</item>
-    </string-array>
-    <string-array name="EQ9">
-        <item name="Q">בJava, איזה מהפקודות ידפסו למסך</item>
-        <item name="A1">System.OutPrint</item>
-        <item name="A2">Cin</item>
-        <item name="A3">Print</item>
-        <item name="A4">Cout</item>
-    </string-array>
-    <string-array name="EQ10">
-        <item name="Q">בpython, איזה מהפקודות ידפסו למסך</item>
-        <item name="A1">print</item>
-        <item name="A2">System.OutPrint</item>
-        <item name="A3">Cin</item>
-        <item name="A4">Cout</item>
-    </string-array>
-    <string-array name="EQ11">
-        <item name="Q">בC#, איזה מהפקודות ידפסו למסך</item>
-        <item name="A1">Console.Write</item>
-        <item name="A2">System.OutPrint</item>
-        <item name="A3">Cin</item>
-        <item name="A4">Cout</item>
-    </string-array>
-    <string-array name="EQ12">
-        <item name="Q">איזה מהטיפוסים הנ"ל יחזיק תו בודד</item>
-        <item name="A1">Char</item>
-        <item name="A2">Int</item>
-        <item name="A3">Double</item>
-        <item name="A4">File</item>
-    </string-array>
-    <string-array name="EQ13">
-        <item name="Q">מה פירוש ראשי התיבות HTML</item>
-        <item name="A1">Hyper Text Markup Language</item>
-        <item name="A2">Hyper Trainer Marking Language</item>
-        <item name="A3">Hyper Text Marketing Language</item>
-        <item name="A4">Hyper Text Markup Leveler</item>
-    </string-array>
-
-    <string-array name="EQ14">
-    <item name="Q">מהם שני סוגי הזיכרון הראשיים</item>
-    <item name="A1">RAM and ROM</item>
-    <item name="A2">ראשי ומשני</item>
-    <item name="A3">ישיר וסידרתי</item>
-    <item name="A4">דיסקים ודיוידי</item>
-    </string-array>
-    <string-array name="EQ15">
-        <item name="Q">זיכרון הראם נקרא גם</item>
-        <item name="A1">זיכרון נדיף</item>
-        <item name="A2">זיכרון וירטואלי</item>
-        <item name="A3">זיכרון לא נדיף</item>
-        <item name="A4">זיכרון מטמון</item>
-    </string-array>
-
-    <string-array name="EQ16">
-        <item name="Q">השלב הראשון בהנדסת תוכנה הוא</item>
-        <item name="A1">ניתוח דרישות</item>
-        <item name="A2">כתיבת קוד</item>
-        <item name="A3">בדיקות</item>
-        <item name="A4">עיצוב</item>
-    </string-array>
-
-    <string-array name="EQ17">
-        <item name="Q">מי מבני הנתונים הבאים הוא מבנה מבוסס אינדקסים?</item>
-        <item name="A1">מערך ליניארי</item>
-        <item name="A2">רשימה מקושרת</item>
-        <item name="A3">תור</item>
-        <item name="A4">עירמה</item>
-    </string-array>
-    <!--Medium -->
-    <string-array name="MQ1">
         <item name="Q">מה הגודל של Integer בביטים?</item>
         <item name="A1">4 ביטים</item>
         <item name="A2">ביט אחד</item>
@@ -142,35 +33,147 @@
         <item name="A4">שני ביטים</item>
     </string-array>
 
-    <string-array name="MQ2">
+    <string-array name="EQ3">
+        <item name="Q">מהי הדרך הנכונה להכריז עלnamespace standard בC++ ?</item>
+        <item name="A1">Using namespace std;</item>
+        <item name="A2">Using namespace standard;</item>
+        <item name="A3">Using standard namespace;</item>
+        <item name="A4">Standard namespace used;</item>
+    </string-array>
+    <string-array name="EQ4">
+        <item name="Q">פייתון נחשבת כ.</item>
+        <item name="A1">שפה עילית</item>
+        <item name="A2">שפה בינונית</item>
+        <item name="A3">שפה נמוכה</item>
+        <item name="A4">אף תשובה אינה נכונה</item>
+    </string-array>
+
+    <string-array name="EQ5">
+        <item name="Q">איזה מהבאים אינו שפת תכנות?</item>
+        <item name="A1">Anaconda</item>
+        <item name="A2">Java</item>
+        <item name="A3">Python</item>
+        <item name="A4">TypeScript</item>
+    </string-array>
+    <string-array name="EQ6">
+        <item name="Q">בC++, איזה מהפקודות ידפסו למסך</item>
+        <item name="A1">Cout</item>
+        <item name="A2">Cin</item>
+        <item name="A3">Print</item>
+        <item name="A4">System.OutPrint</item>
+    </string-array>
+    <string-array name="EQ7">
+        <item name="Q">בJava, איזה מהפקודות ידפסו למסך</item>
+        <item name="A1">System.Out.Print</item>
+        <item name="A2">Cin</item>
+        <item name="A3">Print</item>
+        <item name="A4">Cout</item>
+    </string-array>
+    <string-array name="EQ8">
+        <item name="Q">בpython, איזה מהפקודות ידפסו למסך</item>
+        <item name="A1">print</item>
+        <item name="A2">System.OutPrint</item>
+        <item name="A3">Cin</item>
+        <item name="A4">Cout</item>
+    </string-array>
+    <string-array name="EQ9">
+        <item name="Q">בC#, איזה מהפקודות ידפסו למסך</item>
+        <item name="A1">Console.Write</item>
+        <item name="A2">System.Out.Print</item>
+        <item name="A3">Cin</item>
+        <item name="A4">Cout</item>
+    </string-array>
+    <string-array name="EQ10">
+        <item name="Q">איזה מהטיפוסים הנ"ל יחזיק תו בודד</item>
+        <item name="A1">Char</item>
+        <item name="A2">Int</item>
+        <item name="A3">Double</item>
+        <item name="A4">File</item>
+    </string-array>
+    <string-array name="EQ11">
+        <item name="Q">מה פירוש ראשי התיבות HTML</item>
+        <item name="A1">Hyper Text Markup Language</item>
+        <item name="A2">Hyper Trainer Marking Language</item>
+        <item name="A3">Hyper Text Marketing Language</item>
+        <item name="A4">Hyper Text Markup Leveler</item>
+    </string-array>
+
+    <string-array name="EQ12">
+        <item name="Q">מהם שני סוגי הזיכרון הראשיים</item>
+        <item name="A1">RAM and ROM</item>
+        <item name="A2">ראשי ומשני</item>
+        <item name="A3">ישיר וסידרתי</item>
+        <item name="A4">דיסקים ודיוידי</item>
+    </string-array>
+
+
+    <string-array name="EQ13">
+        <item name="Q">השלב הראשון בהנדסת תוכנה הוא</item>
+        <item name="A1">ניתוח דרישות</item>
+        <item name="A2">כתיבת קוד</item>
+        <item name="A3">בדיקות</item>
+        <item name="A4">עיצוב</item>
+    </string-array>
+
+    <string-array name="EQ14">
+        <item name="Q">מי מבני הנתונים הבאים הוא מבנה מבוסס אינדקסים?</item>
+        <item name="A1">מערך ליניארי</item>
+        <item name="A2">רשימה מקושרת</item>
+        <item name="A3">תור</item>
+        <item name="A4">עירמה</item>
+    </string-array>
+    <!--Medium -->
+
+
+    <string-array name="MQ1">
         <item name="Q">.לאיזה מודל שייך ה -  sequence diagram?</item>
         <item name="A1">interaction model</item>
         <item name="A2">structure model</item>
         <item name="A3">Behavior model</item>
         <item name="A4">אף תשובה אינה נכונה</item>
     </string-array>
-    <string-array name="MQ3">
+    <string-array name="MQ2">
         <item name="Q">לאיזה מודל שייך ה - UML?</item>
         <item name="A1">אף תשובה אינה נכונה</item>
         <item name="A2">structure model</item>
         <item name="A3">Behavior model</item>
         <item name="A4">interaction model</item>
     </string-array>
-    <string-array name="MQ4">
+    <string-array name="MQ3">
         <item name="Q">.על איזו צורך עונה ה - Singleton?</item>
         <item name="A1">שימוש במופע יחיד</item>
         <item name="A2">עקרון ה – close open</item>
         <item name="A3">Loosely decouple</item>
         <item name="A4">מקביליות</item>
     </string-array>
-    <string-array name="MQ5">
+    <string-array name="MQ4">
         <item name="Q">לאיזה שלב שייך ה - diagram class?</item>
         <item name="A1">development and design</item>
         <item name="A2">model interaction</item>
         <item name="A3">model structure</item>
         <item name="A4">requirements</item>
     </string-array>
-
+    <string-array name="MQ5">
+        <item name="Q">איזו בעיה, בא לפתור ה – VCS?</item>
+        <item name="A1">ניהול גירסאות</item>
+        <item name="A2">בעיית החור באוזון</item>
+        <item name="A3">בעיות של יעילות</item>
+        <item name="A4">אף תשובה אינה נכונה</item>
+    </string-array>
+    <string-array name="MQ6">
+        <item name="Q">איזה מהבאים אינו סוג של מסמך קוד  הקשור לביצוע התוכנית?</item>
+        <item name="A1">Hex Code</item>
+        <item name="A2">Machine Code</item>
+        <item name="A3">Bytecode</item>
+        <item name="A4">Source code</item>
+    </string-array>
+    <string-array name="MQ7">
+        <item name="Q">זיכרון הראם נקרא גם</item>
+        <item name="A1">זיכרון נדיף</item>
+        <item name="A2">זיכרון וירטואלי</item>
+        <item name="A3">זיכרון לא נדיף</item>
+        <item name="A4">זיכרון מטמון</item>
+    </string-array>
     <!--Hard -->
     <string-array name="HQ1">
         <item name="Q">איזה מהפעילויות הבאות של התהליך הגנרי של הframework מספק משוב?</item>
@@ -288,9 +291,6 @@
         <item name="A4">כל התשובות לא נכונות</item>
     </string-array>
 
-    <string name="instructions_title">הוראות</string>
-    <string name="about_title">אודות</string>
-    <string name="instructions_text">"ברוכים הבאים ל\"מי רוצה להיות מתכנת\"! מטרת האפלציה היא ללמד ולשפר את הידע שלך כמתכנת. לאפליקציה שאלות בדרגות קושי שונות שמסומנות לפי הרקע של מסך השאלות: ירוק- שאלות קלות המזכות 100 נק'. כחול- שאלות בינוניות המזכות 200 נק'. אדום- שאלות קשות המזכות 300 נק'. מטרת המשחק היא לענות על כמה שיותר שאלות נכון ולצבור כמה שיותר נקודות. בכל משחק יש 3 פסילות שבתומם או שעניתם על כל השאלות נכון נגמר המשחק.  בהצלחה! "</string>
 
 
 </resources>
