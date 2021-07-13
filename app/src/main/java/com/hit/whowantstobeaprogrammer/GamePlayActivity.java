@@ -55,7 +55,7 @@ public class GamePlayActivity extends AppCompatActivity {
     ImageView life3EV;
 
     void startTimer() {
-        cTimer = new CountDownTimer(10000, 1000) {
+        cTimer = new CountDownTimer(11000, 1000) {
             TextView timer=findViewById(R.id.timer_Tv);
             @Override
             public void onTick(long millisUntilFinished) {
@@ -63,7 +63,15 @@ public class GamePlayActivity extends AppCompatActivity {
             }
             @Override
             public void onFinish() {
-                gameOver();
+
+                life--;
+                updateLifeImege();
+                if(life==0) {
+                    gameOver();
+                }
+                else{
+                    load();
+                }
             }
         }.start();
     }
