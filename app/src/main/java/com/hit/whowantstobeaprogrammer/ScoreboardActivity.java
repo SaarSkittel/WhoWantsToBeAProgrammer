@@ -62,8 +62,6 @@ public class ScoreboardActivity extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        //ArrayAdapter<String> arrayAdapter= new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, mapToArr());
-        //scoreboard.setAdapter(arrayAdapter);
         SimpleAdapter simpleAdapter = createSimpleAdapter();
         scoreboard.setAdapter(simpleAdapter);
     }
@@ -91,16 +89,7 @@ public class ScoreboardActivity extends AppCompatActivity {
         int[] ids = {R.id.nameboard,R.id.scoreboard,R.id.cup};
         return new SimpleAdapter(this,data,R.layout.scoreboard_cell,from,ids);
     }
-    /*private ArrayList<String> mapToArr(){
-        String[] names = scoreMap.keySet().toArray(new String[0]);
-        Integer[] scores=scoreMap.values().toArray(new Integer[0]);
-        ArrayList<String>namesAndScores= new ArrayList<String>();
 
-        for(int i=0;i<names.length;++i){
-            namesAndScores.add(i,"name:"+names[i]+" score:"+scores[i].toString());
-        }
-        return namesAndScores;
-    }*/
     private void loadScoreboard() throws IOException {
 
         FileInputStream fileInputStream= openFileInput("scoreboard.hit");

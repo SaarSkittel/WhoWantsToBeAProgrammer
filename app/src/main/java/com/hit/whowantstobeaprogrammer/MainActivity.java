@@ -65,11 +65,14 @@ public class MainActivity extends AppCompatActivity {
                         String name = userNameET.getText().toString();
                         name = name.isEmpty()? getResources().getString(R.string.guest):name;
                         SharedPreferences.Editor editor = sp.edit();
-                        editor.putString("user_name", name);
+                        //editor.putString("user_name", name);
                         editor.putInt("score", 0);
                         editor.putBoolean("status", musicOnOrOff);
                         editor.commit();
                         Intent intent = new Intent(MainActivity.this, GamePlayActivity.class);
+
+                        intent.putExtra("name",name);
+
                         startActivity(intent);
                     }
                 }).show();

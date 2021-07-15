@@ -116,9 +116,11 @@ public class GamePlayActivity extends AppCompatActivity {
         backgroundMusic = MediaPlayer.create(GamePlayActivity.this,R.raw.gameplay);
         score=sp.getInt("score",0);
         NameTV=findViewById(R.id.name);
-        NameTV.setText(sp.getString("user_name","")+"");
+        //NameTV.setText(sp.getString("user_name","")+"");
+        NameTV.setText(getIntent().getStringExtra("name"));
+
+
         ScoreTV = findViewById(R.id.score);
-        //ScoreTV.setText(sp.getString("user_name","")+", Score:"+ score);
         SplitLevelQuestions();
         QuestionTV=findViewById(R.id.question_tv);
         Answer1=findViewById(R.id.answer1_btn);
@@ -263,6 +265,7 @@ public class GamePlayActivity extends AppCompatActivity {
         editor.putBoolean("status",musicOnOrOff);
         editor.commit();
         Intent intent = new Intent(GamePlayActivity.this,GameOverActivity.class);
+        intent.putExtra("name",getIntent().getStringExtra("name"));
         startActivity(intent);
         finish();
 

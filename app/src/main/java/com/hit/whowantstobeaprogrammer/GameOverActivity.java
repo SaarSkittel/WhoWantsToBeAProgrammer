@@ -46,9 +46,11 @@ public class GameOverActivity extends AppCompatActivity {
         setContentView(R.layout.activity_game_over);
         scoreTV=findViewById(R.id.score);
 
-
+        name =getIntent().getStringExtra("name");
         sp=getSharedPreferences("user_details",MODE_PRIVATE);
-        name =sp.getString("user_name","");
+        SharedPreferences.Editor editor = sp.edit();
+        editor.putString("user_name", name);
+        editor.commit();
         score =sp.getInt("score",0);
 
         scoreTV.setText(getResources().getString(R.string.score)+score.toString());
@@ -86,7 +88,7 @@ public class GameOverActivity extends AppCompatActivity {
         if(scoreMap.containsValue(name)&& scoreMap.get(name).intValue() < Integer.valueOf(score)) {
             scoreMap.replace(name, Integer.valueOf(score));
         }
-        else {
+        else if(!scoreMap.containsValue(name)){
         scoreMap.put(name,Integer.valueOf(score));
         }
 
@@ -180,6 +182,7 @@ public class GameOverActivity extends AppCompatActivity {
                 editor.putBoolean("status",musicOnOrOff);
                 editor.commit();
                 Intent intent = new Intent(GameOverActivity.this, GamePlayActivity.class);
+                intent.putExtra("name",name);
                 startActivity(intent);
                 finish();
             }
