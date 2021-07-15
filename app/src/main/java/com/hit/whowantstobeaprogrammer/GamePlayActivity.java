@@ -116,7 +116,6 @@ public class GamePlayActivity extends AppCompatActivity {
         backgroundMusic = MediaPlayer.create(GamePlayActivity.this,R.raw.gameplay);
         score=sp.getInt("score",0);
         NameTV=findViewById(R.id.name);
-        //NameTV.setText(sp.getString("user_name","")+"");
         NameTV.setText(getIntent().getStringExtra("name"));
 
 

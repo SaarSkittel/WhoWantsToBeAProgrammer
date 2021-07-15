@@ -85,10 +85,10 @@ public class GameOverActivity extends AppCompatActivity {
         objectInputStream.close();
     }
     private void saveScoreboard() throws IOException {
-        if(scoreMap.containsValue(name)&& scoreMap.get(name).intValue() < Integer.valueOf(score)) {
+        if(scoreMap.containsKey(name)&& scoreMap.get(name).intValue() < Integer.valueOf(score)) {
             scoreMap.replace(name, Integer.valueOf(score));
         }
-        else if(!scoreMap.containsValue(name)){
+        else if(!scoreMap.containsKey(name)){
         scoreMap.put(name,Integer.valueOf(score));
         }
 
