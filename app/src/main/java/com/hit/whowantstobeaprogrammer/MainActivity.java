@@ -26,7 +26,6 @@ public class MainActivity extends AppCompatActivity {
 
     Button playButton;
     private static MediaPlayer backgroundMusic;
-    private int musicLoader;
     FloatingActionButton music;
     Button scores;
     SharedPreferences sp;

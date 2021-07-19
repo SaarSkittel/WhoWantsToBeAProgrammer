@@ -1,6 +1,5 @@
 package com.hit.whowantstobeaprogrammer;
 
-import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -48,7 +47,7 @@ public class GamePlayActivity extends AppCompatActivity {
     TextView NameTV;
     SharedPreferences.Editor editor;
     private int score;
-    int answerCunter = 0;
+    int answerCounter = 0;
     int life = 3;
     ImageView life1EV;
     ImageView life2EV;
@@ -65,7 +64,7 @@ public class GamePlayActivity extends AppCompatActivity {
             public void onFinish() {
 
                 life--;
-                updateLifeImege();
+                updateLifeImage();
                 if(life==0) {
                     gameOver();
                 }
@@ -147,21 +146,21 @@ public class GamePlayActivity extends AppCompatActivity {
         Answer1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AnswerClickable(false);
+                answerClickable(false);
                 answerCheck(Answer1);
             }
         });
         Answer2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AnswerClickable(false);
+                answerClickable(false);
                 answerCheck(Answer2);
             }
         });
         Answer3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AnswerClickable(false);
+                answerClickable(false);
                 answerCheck(Answer3);
             }
         });
@@ -169,14 +168,14 @@ public class GamePlayActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                AnswerClickable(false);
+                answerClickable(false);
                 answerCheck(Answer4);
             }
         });
     }
 
 
-    private void AnswerClickable(boolean bool){
+    private void answerClickable(boolean bool){
         Answer1.setClickable(bool);
         Answer2.setClickable(bool);
         Answer3.setClickable(bool);
@@ -190,8 +189,8 @@ public class GamePlayActivity extends AppCompatActivity {
         clicked.ButtonSelected();
         if(clicked == Answer){
             score+= level==1?100:level==2?200:300;
-            answerCunter++;
-            level = answerCunter<6?1:answerCunter<12?2:3;
+            answerCounter++;
+            level = answerCounter <6?1: answerCounter <12?2:3;
             clicked.CorrectAnswer(true);
             Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
@@ -205,7 +204,7 @@ public class GamePlayActivity extends AppCompatActivity {
         else {
             life--;
             cTimer.cancel();
-            updateLifeImege();
+            updateLifeImage();
             clicked.WrongAnswer();
             Answer.CorrectAnswer(false);
             if(life==0) {
@@ -233,15 +232,15 @@ public class GamePlayActivity extends AppCompatActivity {
         }
     }
 
-    private void updateLifeImege(){
+    private void updateLifeImage(){
         if(life==2){
-            life3EV.setImageResource(0);
+            life3EV.animate().scaleY(0).scaleX(0).rotation(360).setDuration(1000).start();
         }
         else if(life==1){
-            life2EV.setImageResource(0);
+            life2EV.animate().scaleY(0).scaleX(0).rotationX(360).setDuration(1000).start();
         }
         else if(life==0){
-            life1EV.setImageResource(0);
+            life1EV.animate().scaleY(0).scaleX(0).rotationX(360).setDuration(1000).start();
         }
     }
 
@@ -275,7 +274,7 @@ public class GamePlayActivity extends AppCompatActivity {
             cTimer.cancel();
             cTimer.start();
             ScoreTV.setText(score+"");
-            AnswerClickable(true);
+            answerClickable(true);
             String [] str = null;
             if (level == 1) {
                 gameLayout.setBackground(getDrawable(R.drawable.backgroundgreen));
