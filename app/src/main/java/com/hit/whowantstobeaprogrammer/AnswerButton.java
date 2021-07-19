@@ -23,6 +23,9 @@ public class AnswerButton extends androidx.appcompat.widget.AppCompatButton {
         ButtonReset();
 
     }
+    public void ButtonSelected(){
+        this.setClickable(false);
+    }
 
     public void ButtonReset(){
         changeColor(R.drawable.bluebuttonshape);
