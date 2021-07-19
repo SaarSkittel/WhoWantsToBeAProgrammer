@@ -11,7 +11,7 @@
         android:theme="@style/Theme.WhoWantsToBeAProgremmer">
         <activity android:name=".ScoreboardActivity"></activity>
         <activity android:name=".GameOverActivity" />
-        <activity android:name=".ActivityTextDialog" />
+        <activity android:name=".TextDialog" />
         <activity android:name=".PlayDialog" />
         <activity android:name=".GamePlayActivity" />
         <activity android:name=".MainActivity">

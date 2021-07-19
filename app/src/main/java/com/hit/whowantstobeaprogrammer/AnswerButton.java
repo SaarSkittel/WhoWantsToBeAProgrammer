@@ -9,8 +9,6 @@ import android.media.SoundPool;
 import android.util.AttributeSet;
 import android.util.Log;
 
-import java.util.PrimitiveIterator;
-
 public class AnswerButton extends androidx.appcompat.widget.AppCompatButton {
     private static SoundPool soundPool;
     private static int Wrong;
@@ -25,22 +23,16 @@ public class AnswerButton extends androidx.appcompat.widget.AppCompatButton {
         ButtonReset();
 
     }
-    void test(){
 
-    }
-    public void ButtonSelected(){
-        ChangeColor(R.drawable.buttonshape);
-        this.setClickable(false);
-    }
     public void ButtonReset(){
-        ChangeColor(R.drawable.bluebuttonshape);
+        changeColor(R.drawable.bluebuttonshape);
         this.setClickable(true);
     }
     public void WrongAnswer() {
         soundPool.play(Wrong,1.0f,1.0f,1,0,1.0f);
         this.setClickable(false);
-        ChangeColor(R.drawable.redbuttonshape);
-        Blink();
+        changeColor(R.drawable.redbuttonshape);
+        blink();
 
     }
     public void CorrectAnswer(boolean bool){
@@ -48,10 +40,10 @@ public class AnswerButton extends androidx.appcompat.widget.AppCompatButton {
             soundPool.play(Correct, 1.0f, 1.0f, 1, 0, 1.0f);
         }
         this.setClickable(false);
-        ChangeColor(R.drawable.greenbuttonshape);
-        Blink();
+        changeColor(R.drawable.greenbuttonshape);
+        blink();
     }
-    private void ChangeColor(int color){
+    private void changeColor(int color){
         Drawable myDrawable;
         Resources res = getResources();
         try {
@@ -61,7 +53,7 @@ public class AnswerButton extends androidx.appcompat.widget.AppCompatButton {
             Log.e("Error", "Exception loading drawable");
         }
     }
-    private void Blink(){
+    private void blink(){
         ObjectAnimator oa = ObjectAnimator.ofFloat(this,"alpha",0.2f).setDuration(100);
         oa.setRepeatCount(5);
         oa.setRepeatMode(ObjectAnimator.REVERSE);

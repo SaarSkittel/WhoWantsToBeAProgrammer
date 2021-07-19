@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:background="@drawable/startdialog"
     android:orientation="vertical"
-    tools:context=".ActivityTextDialog">
+    tools:context=".TextDialog">
 
     <TextView
         android:id="@+id/text"
