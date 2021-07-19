@@ -116,7 +116,7 @@
     </string-array>
 
     <string-array name="EQ14">
-        <item name="Q">מי מבני הנתונים הבאים הוא מבנה מבוסס אינדקסים?</item>
+        <item name="Q">מי ממבני הנתונים הבאים הוא מבנה מבוסס אינדקסים?</item>
         <item name="A1">מערך ליניארי</item>
         <item name="A2">רשימה מקושרת</item>
         <item name="A3">תור</item>

@@ -4,6 +4,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -12,6 +15,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -27,11 +31,13 @@ public class MainActivity extends AppCompatActivity {
     Button scores;
     SharedPreferences sp;
     private boolean musicOnOrOff;
+    AnimatorSet animatorSet;
 
     @Override
     protected void onPause() {
         super.onPause();
         backgroundMusic.pause();
+        animatorSet.pause();
     }
 
     @Override
@@ -40,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         backgroundMusic.stop();
         musicOnOrOff = sp.getBoolean("status", true);
         musicControl();
+        animatorSet.start();
     }
 
     @Override
@@ -59,9 +66,10 @@ public class MainActivity extends AppCompatActivity {
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                 View dialogView = getLayoutInflater().inflate(R.layout.activity_play_dialog, null);
                 EditText userNameET = dialogView.findViewById(R.id.UserName);
-                builder.setView(dialogView).setPositiveButton(R.string.Start, new DialogInterface.OnClickListener() {
+                Button start = dialogView.findViewById(R.id.start_btn);
+                start.setOnClickListener(new View.OnClickListener() {
                     @Override
-                    public void onClick(DialogInterface dialog, int which) {
+                    public void onClick(View v) {
                         String name = userNameET.getText().toString();
                         name = name.isEmpty()? getResources().getString(R.string.guest):name;
                         SharedPreferences.Editor editor = sp.edit();
@@ -72,11 +80,14 @@ public class MainActivity extends AppCompatActivity {
                         intent.putExtra("name",name);
                         startActivity(intent);
                     }
-                }).show();
+                });
+                builder.setView(dialogView).show();
             }
         });
 
-
+        ObjectAnimator anim1 = ObjectAnimator.ofFloat(playButton,"alpha",0.5f).setDuration(1000);
+        anim1.setRepeatMode(ValueAnimator.REVERSE);
+        anim1.setRepeatCount(Animation.INFINITE);
 
         music = findViewById(R.id.music_btn);
         musicControl();
@@ -98,7 +109,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
+        ObjectAnimator anim2 = ObjectAnimator.ofFloat(scores,"alpha",0.5f).setDuration(1000);
+        anim2.setRepeatMode(ValueAnimator.REVERSE);
+        anim2.setRepeatCount(Animation.INFINITE);
+        animatorSet=new AnimatorSet();
+        animatorSet.playTogether(anim1,anim2);
+        animatorSet.start();
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -113,23 +129,14 @@ public class MainActivity extends AppCompatActivity {
             View dialogView = getLayoutInflater().inflate(R.layout.activity_text_dialog, null);
             TextView infoText = dialogView.findViewById(R.id.text);
             infoText.setText(R.string.about_text);
-            builder.setView(dialogView).setNegativeButton(R.string.Back, new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-
-                }
-            }).show();
-        }else if(item.getItemId()==R.id.instructions){
+            builder.setView(dialogView).show();
+        }
+        else if(item.getItemId()==R.id.instructions){
             AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
             View dialogView = getLayoutInflater().inflate(R.layout.activity_text_dialog, null);
             TextView infoText = dialogView.findViewById(R.id.text);
             infoText.setText(R.string.instructions_text);
-            builder.setView(dialogView).setNegativeButton(R.string.Back, new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-
-                }
-            }).show();
+            builder.setView(dialogView).show();
         }
         return super.onOptionsItemSelected(item);
     }
