@@ -64,6 +64,7 @@ public class ScoreboardActivity extends AppCompatActivity {
         }
         SimpleAdapter simpleAdapter = createSimpleAdapter();
         scoreboard.setAdapter(simpleAdapter);
+
     }
 
     private SimpleAdapter createSimpleAdapter(){

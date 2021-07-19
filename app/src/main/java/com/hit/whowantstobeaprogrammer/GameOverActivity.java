@@ -2,11 +2,16 @@ package com.hit.whowantstobeaprogrammer;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.animation.Animator;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -71,7 +76,15 @@ public class GameOverActivity extends AppCompatActivity {
         homeButton();
 
         musicFloatingButton();
-
+        ObjectAnimator anim1 =ObjectAnimator.ofFloat(replay,"alpha",0.5f).setDuration(1000);
+        anim1.setRepeatCount(Animation.INFINITE);
+        anim1.setRepeatMode(ValueAnimator.REVERSE);
+        ObjectAnimator anim2=ObjectAnimator.ofFloat(home,"alpha",0.5f).setDuration(1000);
+        anim2.setRepeatCount(Animation.INFINITE);
+        anim2.setRepeatMode(ValueAnimator.REVERSE);
+        AnimatorSet animatorSet = new AnimatorSet();
+        animatorSet.playTogether(anim1,anim2);
+        animatorSet.start();
     }
     private void loadScoreboard() throws IOException {
 
@@ -188,4 +201,5 @@ public class GameOverActivity extends AppCompatActivity {
             }
         });
     }
+
 }
