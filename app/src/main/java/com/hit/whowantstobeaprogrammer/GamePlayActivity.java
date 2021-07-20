@@ -237,10 +237,10 @@ public class GamePlayActivity extends AppCompatActivity {
             life3EV.animate().scaleY(0).scaleX(0).rotation(360).setDuration(1000).start();
         }
         else if(life==1){
-            life2EV.animate().scaleY(0).scaleX(0).rotationX(360).setDuration(1000).start();
+            life2EV.animate().scaleY(0).scaleX(0).rotation(360).setDuration(1000).start();
         }
         else if(life==0){
-            life1EV.animate().scaleY(0).scaleX(0).rotationX(360).setDuration(1000).start();
+            life1EV.animate().scaleY(0).scaleX(0).rotation(360).setDuration(1000).start();
         }
     }
 

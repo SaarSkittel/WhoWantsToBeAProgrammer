@@ -2,13 +2,18 @@ package com.hit.whowantstobeaprogrammer;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.animation.ArgbEvaluator;
+import android.animation.ValueAnimator;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.ArrayMap;
+import android.view.animation.Animation;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -24,6 +29,7 @@ public class ScoreboardActivity extends AppCompatActivity {
     ListView scoreboard;
     MediaPlayer backgroundMusic;
     Boolean musicOnOrOff;
+    TextView score;
     public SharedPreferences sp;
 
     @Override
@@ -49,7 +55,19 @@ public class ScoreboardActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scoreboard);
-
+        score = findViewById(R.id.Score);
+        ValueAnimator valueAnimator=ValueAnimator.ofObject(new ArgbEvaluator(), Color.RED,Color.GREEN,Color.BLUE);
+        valueAnimator.setDuration(10000);
+        valueAnimator.setRepeatCount(Animation.INFINITE);
+        valueAnimator.setRepeatMode(ValueAnimator.REVERSE);
+        valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                int color=(int)valueAnimator.getAnimatedValue();
+                score.setTextColor(color);
+            }
+        });
+        valueAnimator.start();
         sp = getSharedPreferences("user_details",MODE_PRIVATE);
         musicOnOrOff = sp.getBoolean("status",true);
         backgroundMusic = new MediaPlayer();

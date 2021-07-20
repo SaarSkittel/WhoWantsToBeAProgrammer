@@ -4,10 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.animation.Animator;
 import android.animation.AnimatorSet;
+import android.animation.ArgbEvaluator;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
@@ -51,6 +53,18 @@ public class GameOverActivity extends AppCompatActivity {
         setContentView(R.layout.activity_game_over);
         scoreTV=findViewById(R.id.score);
 
+        ValueAnimator valueAnimator=ValueAnimator.ofObject(new ArgbEvaluator(), Color.RED,Color.GREEN,Color.BLUE);
+        valueAnimator.setDuration(10000);
+        valueAnimator.setRepeatCount(Animation.INFINITE);
+        valueAnimator.setRepeatMode(ValueAnimator.REVERSE);
+        valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                int color=(int)valueAnimator.getAnimatedValue();
+                scoreTV.setTextColor(color);
+            }
+        });
+
         name =getIntent().getStringExtra("name");
         sp=getSharedPreferences("user_details",MODE_PRIVATE);
         SharedPreferences.Editor editor = sp.edit();
@@ -83,7 +97,7 @@ public class GameOverActivity extends AppCompatActivity {
         anim2.setRepeatCount(Animation.INFINITE);
         anim2.setRepeatMode(ValueAnimator.REVERSE);
         AnimatorSet animatorSet = new AnimatorSet();
-        animatorSet.playTogether(anim1,anim2);
+        animatorSet.playTogether(anim1,anim2,valueAnimator);
         animatorSet.start();
     }
     private void loadScoreboard() throws IOException {
