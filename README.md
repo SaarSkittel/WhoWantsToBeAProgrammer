@@ -12,7 +12,7 @@ The demographic of the app is from middle school kids and up which are intereste
 ## App Flow
 
 ### Home screen 
- ![image](https://saar-skittel.netlify.app/images/trivia/home.jpg)
+ ![image](https://saar-skittel.netlify.app/images/trivia/home.jpg | width=100)
  
 From this screen you can navigate to start the game and see the highest scores of the user how played the game.
 
