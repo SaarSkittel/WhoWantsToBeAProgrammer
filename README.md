@@ -12,18 +12,25 @@ The demographic of the app is from middle school kids and up which are intereste
 ## App Flow
 
 ### Home screen 
+ ![image](https://saar-skittel.netlify.app/images/trivia/home.jpg)
  
 From this screen you can navigate to start the game and see the highest scores of the user how played the game.
 
 ### Game play
+![image](https://saar-skittel.netlify.app/images/trivia/levels.jpg)
+ 
 In the game you will have to 10 seconds to answer the questions you are given, in case you have answer wrong you have three strike. As you go on the game will gradually become harder and the indication of the level of difficulty will be presented by the background of the screen (green being easy, blue being medium and red is hard).
 
 ### Game over
+![image](https://saar-skittel.netlify.app/images/trivia/game_over.jpg)
+ 
 
 In this screen you will have two options which are to play again or to go back to go back to the home screen furthermore the user score will be displayed on this screen.
 
 
 ### Scoreboard
+![image](https://saar-skittel.netlify.app/images/trivia/score.jpg)
+ 
 
 In this screen the scores will be displayed with the names and the scoures of the users that played the game.
 
